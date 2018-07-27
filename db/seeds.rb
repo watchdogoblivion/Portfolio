@@ -16,9 +16,9 @@ end
 
 puts "5 created"
 
-9.times do |portfolio|
+9.times do |portfolio_items|
 	Portfolio.create!(
-		title: "Portfolio title: #{portfolio}",
+		title: "Portfolio title: #{portfolio_items}",
 		subtitle: "My great service",
 		body: "magna",
 		main_image:"http://via.placeholder.com/600x400",
