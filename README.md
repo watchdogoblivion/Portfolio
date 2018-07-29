@@ -1,4 +1,4 @@
-# Ruby Project 1
+# Ruby Portfolio
 
 > This is a Ruby on rails 5 application that allows users to create their own portfolios
 
