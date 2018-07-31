@@ -22,10 +22,9 @@
        <%= link_to "Register", new_user_registration_path %>
     <% end %>
 
+      <%= render 'shared/nav', location: "top" %>
     <!-- yield allows us to slide the content in to page -->
     <%= yield %> 
-    
-    <%= render 'shared/nav' %>
 
     <% if session[:source] %>
     <p>Thanks for visiting me from <%= session[:source] %></p>
