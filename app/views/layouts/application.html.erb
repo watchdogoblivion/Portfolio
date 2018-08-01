@@ -22,8 +22,7 @@
     <!-- yield allows us to slide the content in to page -->
     <%= yield %> 
 
-    <% if session[:source] %>
-    <p>Thanks for visiting me from <%= session[:source] %></p>
-    <% end %>
+    <%= source_helper %>
+    
   </body>
 </html>
