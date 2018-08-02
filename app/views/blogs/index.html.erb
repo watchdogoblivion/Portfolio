@@ -6,13 +6,15 @@
   <thead>
     <tr>
       <th>Title</th>
+      <th>Date</th>
       <th>Body</th>
       <th colspan="4"></th>
     </tr>
   </thead>
 
   <tbody>
-    <%= render @blogs %>
+    <%#= render @blogs %>
+    <%= render "blog", blogs: @blogs %>
   </tbody>
 </table>
 

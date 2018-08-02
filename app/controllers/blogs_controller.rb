@@ -13,7 +13,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1.json
   def show
     @page_title = @blog.title
-    @seo_keywords = blog.body
+    @seo_keywords = @blog.body
   end
 
   # GET /blogs/new
@@ -54,16 +54,6 @@ class BlogsController < ApplicationController
       end
     end
   end
-
-  def toggle_status
-    if @blog.draft?
-      @blog.published!
-    else
-    @blog.draft!
-    end
-    redirect_to blogs_url, notice: 'Blog status successfully updated.'
-    
-  end
   # DELETE /blogs/1
   # DELETE /blogs/1.json
   def destroy
@@ -72,6 +62,17 @@ class BlogsController < ApplicationController
       format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def toggle_status
+    
+    if @blog.draft?
+       @blog.published!
+    elsif @blog.published?
+       @blog.draft!
+    end
+
+      redirect_to blogs_url, notice: 'Blog status successfully updated.'
   end
 
   private
