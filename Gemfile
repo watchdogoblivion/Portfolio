@@ -61,3 +61,5 @@ gem 'friendly_id', '~> 5.2.0'
 gem 'devise', '~> 4.4', '>= 4.4.3'
 
 gem 'bootstrap', '~> 4.1.3'
+
+gem 'dorilas_view_tool', git: 'https://github.com/watchdogoblivion/dorilas_view_tool'
