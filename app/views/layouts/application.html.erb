@@ -17,14 +17,13 @@
     <body>
         <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
-            <%= render "shared/application_nav", location: "top" %>
-
-            <%= login_helper %>
+            <%= render "shared/application_nav"%>
 
             <!-- yield allows us to slide the content in to page -->
             <%= yield %> 
 
-            <%= copyright_generator %>
+            <%= render "shared/application_footer"%>
+
             <%= source_helper %>
         </div>
     </body>
