@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title><%= @page_title %></title>
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
 
-    <title><%= @page_title %></title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+        <meta name="keywords" content="<%= @seo_keywords %>" />
 
-    <meta name="keywords" content="<%= @seo_keywords %>" />
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <body>
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+            <%= render "shared/application_nav", location: "top" %>
 
-    <%= render "shared/nav", location: "top" %>
+            <%= login_helper %>
 
-    <%= login_helper %>
+            <!-- yield allows us to slide the content in to page -->
+            <%= yield %> 
 
-    <!-- yield allows us to slide the content in to page -->
-    <%= yield %> 
-
-    <%= copyright_generator %>
-    <%= source_helper %>
-    
-  </body>
+            <%= copyright_generator %>
+            <%= source_helper %>
+        </div>
+    </body>
 </html>
