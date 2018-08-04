@@ -37,11 +37,12 @@ body {
   display: flex;
   color: #fff;
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+ /* box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5); box-sizing: border-box; width: 100%; height: 200%; */
 }
 
 .cover-container {
   max-width: 55em;
+  min-height: 60em;
 }
 
 
@@ -107,3 +108,18 @@ body {
   color: rgba(255, 255, 255, .5);
 }
 
+/*
+ * Custom styles
+ */
+.card-body {
+  color: black;
+  text-align: left;
+}
+
+.card {
+  border: 10px solid rgba(0,0, 0, 0.125);
+}
+
+.auth-links a {
+  color: black;
+}
