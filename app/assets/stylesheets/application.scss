@@ -42,7 +42,6 @@ body {
 
 .cover-container {
   max-width: 55em;
-  min-height: 60em;
 }
 
 
@@ -118,6 +117,10 @@ body {
 
 .card {
   border: 10px solid rgba(0,0, 0, 0.125);
+}
+
+.register-text {
+  text-align: right;
 }
 
 .auth-links a {
