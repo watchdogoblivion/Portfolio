@@ -1,0 +1,50 @@
+
+    <div class="col-md-12">
+      <div class="card flex-md-row mb-4 shadow-sm">
+        <div class="card-body d-flex flex-column align-items-start">
+            <div >
+              <h3>Featured post</h3>
+              <div><%= blogs.last.title %></div>
+              <div class="mb-1 text-muted">
+                <%= distance_of_time_in_words( blogs.last.created_at, Time.now) %> ago
+              </div>
+              <p class = "card-text2"><%= blogs.last.body %></p>
+              <p><%= link_to "Continue reading", blogs.last%></p>
+            </div>
+        </div> 
+      </div>
+    </div>
+
+
+<!--     <div class="col-md-12">
+      <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+        <div class="card-body d-flex flex-column align-items-start">
+          <h3>Featured post</h3>
+          <div><%= blogs.last.title %></div>
+          <div class="mb-1 text-muted">
+            <%= distance_of_time_in_words( blogs.last.created_at, Time.now) %> ago
+          </div>
+          <p ><%= blogs.last.body %></p>
+          <p><%= link_to "Continue reading", blogs.last%></p>
+        </div>
+        <img class="card-img-right flex-auto d-none d-lg-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
+      </div>
+    </div>  -->
+ 
+
+
+
+<!-- <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <h3>Featured post</h3>
+              <div><%= blogs.last.title %></div>
+              <div class="mb-1 text-muted"><%= distance_of_time_in_words( blogs.last.created_at, Time.now) %> ago
+              </div>
+              <p class="card-text mb-auto"><%= blogs.last.body %></p>
+              <a href="#">Continue reading</a>
+            </div>
+            <img class="card-img-right flex-auto d-none d-lg-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
+          </div>
+        </div> -->

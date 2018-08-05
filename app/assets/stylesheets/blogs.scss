@@ -125,3 +125,21 @@ h1, h2, h3, h4, h5, h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+
+
+.card-text2 {
+    word-wrap: break-word;
+    width: 1075px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;    
+}
+
+.blog-body {
+    word-wrap: break-word;
+    width: 1075px;
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;    
+}
