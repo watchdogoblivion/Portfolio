@@ -1,13 +1,24 @@
 <% @blogs.each do |blog| %>
- <tr>	
-	<td><%= blog.title %></td>
-	<td> Published <%= distance_of_time_in_words( blog.created_at, Time.now) %> ago</td>
-	<td><%= blog.body %></td>
-    <td><%= link_to blog.status, toggle_status_blog_path(blog) %></td>
-	<td><%= link_to 'Show', blog %></td>
-	<td><%= link_to 'Edit', edit_blog_path(blog) if logged_in?(:site_admin) %></td>
-	<td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %></td>
- </tr>
- <% end %>
+	<div class="blog-post">
+		<h2 class="blog-post-title"><%= link_to blog.title, blog %></h2>
+		<p class="blog-post-meta">Published <%= blog.created_at.strftime("%F") %></p>
+		<% if logged_in?(:site_admin)%>
+			<p class="blog-post-meta">
+				<%= link_to blog.status, toggle_status_blog_path(blog)%> /
+				<%= link_to 'Edit', edit_blog_path(blog)%> /
+				<%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }%>		
+			</p>
+		<% end %>
+		
+		<!-- <p class = "blog-body"><%= blog.body[0,290] + "..." %></p> -->
+
+		<% if blog.body.length > 295 %>
+			<p class = "blog-body"><%= blog.body[0,295] + "..." %></p>
+		<% else %>
+			<p class = "blog-body"><%= blog.body %></p>
+		<% end %>
+	</div>
+<% end %>
+
 <!-- rails handles the iteration, by passing in @blogs and naming this partial the singluar of blogs which is blog
 rails looks for the blog partial and since the iteration cycle is so common with the @blogs instance variable defined in the controller, rails does the iteration automatically for us -->

@@ -23,6 +23,21 @@
 
         <%= render "shared/blog_nav"%>
 
+        <!-- start of header -->
+        <div class="container">
+          <header class="blog-header py-3">
+            <div class="row flex-nowrap justify-content-between align-items-center">
+              <div class="col-12 text-center">
+                <a class="blog-header-logo text-dark">My Blogs</a>
+              </div>
+            </div>
+          </header>
+        </div>
+
+        <%= render "shared/blog_featured", blogs: @blogs %>
+      
+        <!-- end of header -->
+
         <!-- yield allows us to slide the content in to page -->
         <%= yield %> 
 
@@ -61,23 +76,22 @@
             </ol>
           </div>
         </aside><!-- /.blog-sidebar -->
-
-        <!-- end of side bar -->
-
-        <!-- start of footer -->
-        <footer class="blog-footer">
-          <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-          <p>
-            <a href="#">Back to top</a>
-          </p>
-        </footer>
-        <!-- end of footer -->
-
-        <%#= render "shared/nav", location: "bottom" %>
-
-        <%= source_helper %>
-
       </div>
+
+      <!-- end of side bar -->
+
+      <!-- start of footer -->
+      <footer class="blog-footer">
+        <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+        <p>
+          <a href="#">Back to top</a>
+        </p>
+      </footer>
+      <!-- end of footer -->
+
+      <%#= render "shared/nav", location: "bottom" %>
+
+      <%= source_helper %>
     </main>
   </body>
 </html>
