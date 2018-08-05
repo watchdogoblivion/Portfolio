@@ -17,10 +17,14 @@
    
     <%= login_helper %>
 
+    <%= render "shared/application_nav"%>
+
     <!-- yield allows us to slide the content in to page -->
     <%= yield %> 
 
-    <%= render "shared/nav", location: "bottom" %>
+    <%#= render "shared/nav", location: "bottom" %>
+    
+    <%= render "shared/application_footer"%>
 
   <%= source_helper %>
   </body>
