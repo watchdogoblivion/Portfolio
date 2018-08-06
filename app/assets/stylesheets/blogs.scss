@@ -179,3 +179,22 @@ h1, h2, h3, h4, h5, h6 {
 .social-links {
   font-size: 30px;
 }
+
+.nav-background{
+  background-color: black;
+}
+
+.nav .nav-link{
+  padding: .25rem 0 0 0;
+  border-bottom: .35rem solid transparent;
+}
+
+.nav .active {
+  border-bottom-color: blue;
+}
+
+.nav .nav-link:hover,
+.nav .nav-link:focus {
+  border-bottom-color: blue;
+}
+
