@@ -1,16 +1,17 @@
- <%= render "shared/blog_featured", blogs: @blogs %>
+ <%= render "shared/blog_featured", blogs: @blogs, featured_blogs: @featured_blogs %>
 
 <div class="col-md-8 blog-main">
   <h3 class="pb-3 mb-4 font-italic">
     <%= link_to 'Write a new Blog', new_blog_path if logged_in?(:site_admin)%>
   </h3>
 
+  <%= paginate @blogs %>
+
+  <br>
+
   <%= render "blog", blogs: @blogs %>
 
-  <nav class="blog-pagination">
-    <a class="btn btn-outline-primary" href="#">Older</a>
-    <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
-  </nav>
+  <%= paginate @blogs %>
 
 </div><!-- /.blog-main -->
 
