@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome";
 
 /* stylelint-disable selector-list-comma-newline-after */
 
@@ -127,6 +128,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+/*
+ *Custom styles
+ */
 
 .featured-text {
     word-wrap: break-word;
@@ -138,8 +142,40 @@ h1, h2, h3, h4, h5, h6 {
 
 .blog-body {
     word-wrap: break-word;
+    width: 765px;
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;    
+}
+
+.featured-body {
+    word-wrap: break-word;
     width: 1075px;
     white-space: pre-wrap;
     overflow: hidden;
     text-overflow: ellipsis;    
+}
+
+.card-body{
+  color: white;
+  background-color: black;
+  font-size: 22px;
+}
+
+.featured-post{
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+  
+}
+
+.blog-title{
+  font-size: 30px;
+  font-style: italic;
+  font-family: serif;
+  font-weight: bold;
+}
+
+.social-links {
+  font-size: 30px;
 }

@@ -9,8 +9,6 @@
 				<%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }%>		
 			</p>
 		<% end %>
-		
-		<!-- <p class = "blog-body"><%= blog.body[0,290] + "..." %></p> -->
 
 		<% if blog.body.length > 445 %>
 			<p class = "blog-body"><%= blog.body[0,445] + "...." %></p>
