@@ -58,6 +58,16 @@ module ApplicationHelper
 	def active? root_path
 		"active" if current_page? root_path
 	end
+
+	def video_helper(video, poster)
+		 video_tag(
+                          video, 
+                          id:  "background",
+                          autoplay: true,
+                          loop: true,
+                          muted: true,
+                          poster: poster)
+	end
 end
 
 		# (link_to "Home", root_path, class: "nav-link") + " " +
