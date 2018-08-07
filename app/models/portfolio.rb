@@ -21,5 +21,9 @@ class Portfolio < ApplicationRecord
 	#you set defaults in migration or model like above
 	#||= is like if a.nil? a ="" else do nothing
 
+	def self.by_position
+		order("position ASC")
+	end
+
 
 end
