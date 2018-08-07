@@ -1,4 +1,5 @@
 <%= form_with(model: @portfolio_item, local: true) do |p| %>
+<%#= form_for(@portfolio_item) do |p| %>
 
   <div class = "row">
     <div class= "col-md-6">
@@ -36,16 +37,19 @@
 
   <div class= "col-md-12">
     <h2>Technologies Used:</h2>
+
     <div>
       <%= p.fields_for :technologies do |technology_form| %>
-      <div class="form-group">
-        <%= technology_form.label :name %>
-        <%= technology_form.text_field :name, class: "form-control" %>
-      </div>
+        <%= render "technology_fields", f: technology_form %>
       <% end %>
+      <div>
+        <%= link_to_add_association 'Add Technology', p, :technologies %>
+      </div>
     </div>
+
     <div class="form-group">
       <%= p.submit "Save Portfolio Item", class: 'btn btn-primary' %>
     </div>
+
   </div>
 <% end %>
