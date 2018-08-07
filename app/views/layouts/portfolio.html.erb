@@ -11,24 +11,15 @@
 
     <%= stylesheet_link_tag    'portfolios', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-
   </head>
 
   <body>
     <%= render "shared/portfolio_nav" %>
-
     <%= render 'shared/portfolio_header' %>
-
     <!-- yield allows us to slide the content in to page -->
     <%= yield %> 
-
     <%= render 'shared/portfolio_footer' %>
-
     <%= source_helper %>
-
-
-
   </body>
 
 </html>
