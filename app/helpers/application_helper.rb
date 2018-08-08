@@ -81,7 +81,7 @@ module ApplicationHelper
 	end
 
 	def alert_generator msg
-		js add_gritter(msg, title: "Samuel Dorilas Portfolio", sticky: false)
+		js add_gritter(msg, title: "#{current_user.first_name}", sticky: false)
 	end
 end
 

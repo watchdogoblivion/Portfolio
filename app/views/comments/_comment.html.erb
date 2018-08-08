@@ -1,0 +1,29 @@
+ <% comments.each do |comment| %>	
+	<div class="comment-card">
+		<div class="card">
+			<div class="card-block">
+				<div class="row">
+					<div class= "col-md-2">
+					<%if comment.user.role == :site_admin %>
+			            <%= image_tag "profile.png", width: 55 %>
+		            <% else %>
+						<%= gravatar_helper comment.user %>
+					<% end %>
+					</div>
+
+					<div class = "col-md-10">
+						<div>
+							<%= comment.content %>	
+					    </div>
+					    <br>
+						<div class= "comment-attribute">
+							Comment posted by <%= comment.user.first_name %> <%= distance_of_time_in_words(@blog.created_at, Time.now) %> ago
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+ <% end %> 

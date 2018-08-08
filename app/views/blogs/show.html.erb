@@ -6,6 +6,13 @@
   <%= link_to 'Back', blogs_path %>
 
   <p><%= @blog.body %></p>
+
+  <%= render "comments/comment_form" %>
+  <div id = "comments" data-blog-id="<%= @blog.id %>">
+	  <!-- <%#= render @blog.comments %>  I prefer the method below because it speaks more but this works if you
+	  	modify the comment_broadcast_job by passing in just comment without the comments array-->
+	  <%= render "comments/comment" , comments: @blog.comments%>
+  </div>
   
 </div>
 
