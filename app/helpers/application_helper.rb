@@ -45,6 +45,8 @@ module ApplicationHelper
 		]
 	end
 
+
+
 	def nav_helper (style)
     	nav_links = ""
 
@@ -67,6 +69,19 @@ module ApplicationHelper
                           loop: true,
                           muted: true,
                           poster: poster)
+	end
+
+
+	def alerts
+		alert = (flash[:alert] || flash[:error] || flash[:notice])
+
+		if alert
+			alert_generator alert
+		end
+	end
+
+	def alert_generator msg
+		js add_gritter(msg, title: "Samuel Dorilas Portfolio", sticky: false)
 	end
 end
 

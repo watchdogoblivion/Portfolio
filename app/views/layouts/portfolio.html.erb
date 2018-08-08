@@ -14,11 +14,14 @@
   </head>
 
   <body>
+
     <%= render "shared/portfolio_nav" %>
     <%= render 'shared/portfolio_header' %>
     <!-- yield allows us to slide the content in to page -->
     <%= yield %> 
     <%= render 'shared/portfolio_footer' %>
+
+    <%= alerts %>
     <%= source_helper %>
   </body>
 
