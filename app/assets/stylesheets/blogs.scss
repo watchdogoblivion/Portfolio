@@ -118,6 +118,7 @@ h1, h2, h3, h4, h5, h6 {
  * Footer
  */
 .blog-footer {
+  margin-top: 20px;
   padding: 2.5rem 0;
   color: #999;
   text-align: center;
@@ -199,3 +200,12 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom-color: blue;
 }
 
+.comment-card > .card {
+  margin-top: 15px
+}
+
+.comment-attribute{
+  font-style: italic;
+  font-weight: bold;
+  color: grey;
+}
