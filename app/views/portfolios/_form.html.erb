@@ -1,5 +1,10 @@
 <%= form_with(model: @portfolio_item, local: true) do |p| %>
-<%#= form_for(@portfolio_item) do |p| %>
+
+  <% if @portfolio_item.errors.any? %>
+    <% @portfolio_item.errors.full_messages.each do |error| %>
+      <%= alert_generator error %>
+    <% end %>
+  <% end %>
 
   <div class = "row">
     <div class= "col-md-6">
