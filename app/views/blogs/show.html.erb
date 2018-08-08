@@ -7,7 +7,7 @@
 
   <p><%= @blog.body %></p>
 
-  <%= render "comment/comment_form" %>
+  <%= render "comments/comment_form" %>
   <div id = "comments" data-blog-id="<%= @blog.id %>">
 	  <%#= render @blog.comments %>
 	  <%= render "comments/comment", comments: @blog.comments %>
