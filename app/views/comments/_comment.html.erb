@@ -17,7 +17,8 @@
 					    </div>
 					    <br>
 						<div class= "comment-attribute">
-							Comment posted by <%= comment.user.first_name %> <%= distance_of_time_in_words(@blog.created_at, Time.now) %> ago
+							<%# byebug %>
+							Comment posted by <%=  comment.user.first_name %> <%= distance_of_time_in_words(comment.created_at, Time.now) %> ago
 						</div>
 					</div>
 

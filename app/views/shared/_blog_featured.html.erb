@@ -5,7 +5,7 @@
             <div >
               <h3 class= "featured-post">Featured post</h3>
               <% @featured_blogs.each do |featured_blog| %>
-                <% if featured_blog.featured? %>
+                <% if featured_blog.featured? && featured_blog.published? %>
                   <div class= "blog-title"><%= featured_blog.title %></div>
                   <div class="mb-1 text-muted">
                     <%= distance_of_time_in_words( featured_blog.created_at, Time.now) %> ago
