@@ -1,0 +1,8 @@
+<% images.each do | image | %>
+	<%= "<div class = '#{image[:style1]}'>".html_safe %>
+		<% image[:iterate].times do %>	
+			<br>
+		<% end %>
+		<%= image_tag image[:image], height: image[:height], class: image[:style2],alt: image[:alt] %>
+	</div>
+<% end %>

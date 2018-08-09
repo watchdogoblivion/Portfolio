@@ -1,0 +1,8 @@
+<% certifications.each do | certification | %>
+	<%= "<div class = '#{certification[:style1]}'>".html_safe %>
+		<% certification[:iterate].times do %>	
+			<br>
+		<% end %>
+		<%= image_tag certification[:image], height: certification[:height], class: certification[:style2],alt: certification[:alt] %>
+	</div>
+<% end %>

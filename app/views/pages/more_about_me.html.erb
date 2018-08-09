@@ -1,0 +1,20 @@
+<div class = "background-more" id="background" ></div>
+<div class="container">
+    <div class= "backdrop">
+    	<p></p>
+	    <h1>More About Me</h1>
+		<p >In addition to programming, I have a great passion for health and fitness. I have a second bachelors degree in exercise and health science. I have worked as personal trainer with many clients. I have also interned at Massachusetts General Hospital for physical therapy. I competed in a few powerlifting competitions and acquired the state title for the bench press. I hope to acquire the U.S.A title soon. I competed in one bodybuilding competition and won on my first attempt getting by pro card. Whether it be mental or physical i strive to be the very best that I can. </p>
+	</div>
+    <div class = "row">
+    	<%= render "shared/about_me_images", images: about_me_items %>
+		<div class = "col-md-6">
+			<%= video_tag(
+                      "statebench.mp4", 
+                      size: "350x450",
+                      autoplay: false,
+                      loop: false,
+                      muted: false,
+                      controls: true) %>
+		</div>
+	</div>	
+</div>
