@@ -9,4 +9,10 @@ class PagesController < ApplicationController
 
   def contact
   end
+
+  def more_about_me
+  end
+
+  def certifications
+  end
 end

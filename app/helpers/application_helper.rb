@@ -1,11 +1,11 @@
 module ApplicationHelper
 
-	def login_helper(style = "")
+	def login_helper(class_style = "", style = "")
 		if current_user.is_a?(GuestUser)
-			(link_to "Register", new_user_registration_path, class: style) + " ".html_safe +
-	        (link_to "Login", new_user_session_path, class: style) 
+			(link_to "Register", new_user_registration_path, class: class_style, style: style) + " ".html_safe +
+	        (link_to "Login", new_user_session_path, class: class_style, style: style) 
 	    else 
-	        link_to "Logout", destroy_user_session_path, method: :delete, class: style 
+	        link_to "Logout", destroy_user_session_path, method: :delete, class: class_style, style: style 
         end
 	end
 
@@ -46,12 +46,12 @@ module ApplicationHelper
 	end
 
 
-
-	def nav_helper (style)
+	def nav_helper (class_style, style = "")
     	nav_links = ""
 
     	nav_items.each do | item |
-			nav_links << " <a href='#{item[:url]}' class='#{style} #{active? item[:url]}'>#{item[:title]}</a>"
+			nav_links << " <a href='#{item[:url]}' class='#{class_style} #{active? item[:url]}'
+			style='#{style}'>#{item[:title]}</a>"
 		end
 
   		nav_links.html_safe
@@ -59,6 +59,136 @@ module ApplicationHelper
 
 	def active? root_path
 		"active" if current_page? root_path
+	end
+
+	def about_me_items
+		[
+			{
+				style1: "col-md-12",
+				iterate: 1,
+				image: "umb.jpg",
+				height: 600,
+				style2: "",
+				alt: "Umb image"
+			},
+			{
+				style1: "col-md-12",
+				iterate: 1,
+				image: "acsm.jpg",
+				height: 600,
+				style2: "",
+				alt: "Acsm image"
+			},
+			{
+				style1: "col-md-12",
+				iterate: 1,
+				image: "record.png",
+				height: 450,
+				style2: "",
+				alt: "Record image"
+			},
+			{
+				style1: "col-md-6",
+				iterate: 1,
+				image: "posing2.jpg",
+				height: 400,
+				style2: "",
+				alt: "Posing image"
+			},
+			{
+				style1: "col-md-6",
+				iterate: 3,
+				image: "awards.jpg",
+				height: 300,
+				style2: "image",
+				alt: "Awards image"
+			},
+			{
+				style1: "col-md-6",
+				iterate: 2,
+				image: "lifting1.png",
+				height: 400,
+				style2: "",
+				alt: "Lifting image"
+			}
+		]
+	end
+
+	def certification_items
+		[
+			{
+				style1: "col-md-12",
+				iterate: 2,
+				image: "wgu.jpg",
+				height: 550,
+				style2: "",
+				alt: "Certification"
+			},
+			{
+				style1: "col-md-12",
+				iterate: 2,
+				image: "network.png",
+				height: 600,
+				style2: "",
+				alt: "Certification"
+			},
+			{
+				style1: "col-md-12",
+				iterate: 2,
+				image: "a_plus.png",
+				height: 600,
+				style2: "",
+				alt: "Certification"
+			},
+			{
+				style1: "col-md-12",
+				iterate: 2,
+				image: "project.png",
+				height: 600,
+				style2: "",
+				alt: "Certification"
+			},
+			{
+				style1: "col-md-12",
+				iterate: 2,
+				image: "site.png",
+				height: 500,
+				style2: "",
+				alt: "Certification"
+			},
+			{
+				style1: "col-md-12",
+				iterate: 2,
+				image: "designer.png",
+				height: 500,
+				style2: "",
+				alt: "Certification"
+			},
+			{
+				style1: "col-md-12",
+				iterate: 2,
+				image: "specialist.png",
+				height: 570,
+				style2: "",
+				alt: "Certification"
+			},
+			{
+				style1: "col-md-12",
+				iterate: 2,
+				image: "associate.png",
+				height: 600,
+				style2: "",
+				alt: "Certification"
+			},
+			{
+				style1: "col-md-12",
+				iterate: 2,
+				image: "professional.png",
+				height: 600,
+				style2: "",
+				alt: "Certification"
+			}
+		]
 	end
 
 	def video_helper(video, poster)

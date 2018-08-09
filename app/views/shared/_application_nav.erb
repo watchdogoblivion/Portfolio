@@ -1,11 +1,20 @@
 <body class="text-center">
-  <header class="masthead mb-auto">
-    <div class="inner">
-      <h3 class="masthead-brand">Samuel Dorilas</h3>
-      <nav class="nav nav-masthead justify-content-center">
-        <%= nav_helper("nav-link") %>
-        <%= login_helper("nav-link") %>
-      </nav>
-    </div>
-  </header>
+    <header class="masthead mb-auto">
+	    <div class="inner">
+	    	<% unless current_page? certifications_path%>
+	      		<h3 class="masthead-brand">Samuel Dorilas</h3>
+	      	<% else %>
+		        <h3 class="masthead-brand color-one" >Samuel Dorilas</h3>
+            <% end %>
+	        <nav class="nav nav-masthead justify-content-center">
+		      	<% unless current_page? certifications_path%>
+		      		<%= nav_helper("nav-link") %>
+		            <%= login_helper("nav-link") %>
+		      	<% else %>
+			        <%= nav_helper("nav-link", "color:black;") %>
+			        <%= login_helper("nav-link", "color:black;") %>
+		        <% end %>
+	        </nav>
+	    </div>
+    </header>
 </body>
