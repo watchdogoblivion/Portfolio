@@ -10,5 +10,6 @@ class ApplicationController < ActionController::Base
 		@copyright = DorilasViewTool::Renderer.copyright "Samuel Dorilas", "All rights reserved"
 	end
 	
+	
 end
 

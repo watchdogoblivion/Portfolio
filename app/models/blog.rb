@@ -1,4 +1,5 @@
 class Blog < ApplicationRecord
+
 	enum status: {draft: 0, published: 1}
     enum featured: {not_featured: 0, featured: 1}
 

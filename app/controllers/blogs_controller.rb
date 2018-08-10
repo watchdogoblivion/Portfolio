@@ -1,7 +1,12 @@
 class BlogsController < ApplicationController
+
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status, :toggle_featured]
+  before_action :set_sidebar_topics, only: [:index, :show]
+  access all: [:show, :index], 
+         user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status, :toggle_featured]}, 
+         site_admin: :all
   layout "blog"
-  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status, :toggle_featured]}, site_admin: :all
+
 
 
   # GET /blogs
@@ -14,6 +19,7 @@ class BlogsController < ApplicationController
     end
     @featured_blogs = Blog.all
     @page_title = "My Portfolio Blog"
+
   end
 
   # GET /blogs/1
@@ -113,4 +119,14 @@ class BlogsController < ApplicationController
     def blog_params
       params.require(:blog).permit(:title, :body, :topic_id)
     end
+
+    def set_sidebar_topics
+    if logged_in?(:site_admin)
+      @side_bar_topics = Topic.all
+    else
+      @side_bar_topics = Topic.with_blogs      
+    end
+      
+    end
+
 end
