@@ -37,26 +37,20 @@ module ApplicationHelper
 				title: "Contact"
 			},
 			{
-				url: blogs_path,
-				title: "Blogs"
-			},
-			{
 				url: portfolios_path,
 				title: "Portfolios"
-			}
-		]
-
-		admin_items = {
+			},
+			{
 				url: topics_path,
 				title: "Topics"
+			},
+			{
+				url: blogs_path,
+				title: "Blogs"
 			}
+			
+		]
 
-	    if logged_in?(:site_admin)
-	    	
-	    	return nav_items.insert(3, admin_items)
-		else
-			return nav_items
-		end
 	end
 
 
@@ -72,7 +66,15 @@ module ApplicationHelper
 	end
 
 	def active? root_path
-		"active" if current_page? root_path
+		"active" if this_page(root_path)
+	end
+
+	def this_page root_path
+		if current_page? root_path
+			true
+		else 
+			false
+		end
 	end
 
 	def about_me_items

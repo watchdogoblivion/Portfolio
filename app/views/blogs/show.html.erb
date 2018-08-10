@@ -3,15 +3,15 @@
   <h2 class="pb-3 mb-4 font-italic"><%= @blog.title %></h2>
   <p><%= @blog.topic.title %></p>
 
-  <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %> |
-  <%= link_to 'Back', blogs_path %>
+  <%= link_to 'Edit Blog', edit_blog_path(@blog) if logged_in?(:site_admin) %> |
+  <%= link_to 'Go to blogs', blogs_path %> |
+  <%= link_to 'Go to Topics', topics_path %>
 
   <p><%= @blog.body %></p>
 
   <%= render "comments/comment_form" %>
   <div id = "comments" data-blog-id="<%= @blog.id %>">
-	  <!-- <%#= render @blog.comments %>  I prefer the method below because it speaks more but this works if you
-	  	modify the comment_broadcast_job by passing in just comment without the comments array-->
+	  <!-- <%#= render @blog.comments %>  I prefer the method below because it speaks more but this works if you modify the comment_broadcast_job by passing in just comment without the comments array-->
 	  <%= render "comments/comment" , comments: @blog.comments, blog: @blog%>
   </div>
   

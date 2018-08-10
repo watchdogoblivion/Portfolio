@@ -1,0 +1,19 @@
+<div class="col-md-8 blog-main">
+  <h3 class="pb-3 mb-4 font-italic"><%= @topic.title%></h3>
+
+  <%= paginate @blogs %>
+
+  <br>
+
+  <%= render "blogs/blog" %>
+
+  <%= paginate @blogs %>
+
+  <br>
+
+  <%= link_to 'Go to blogs', blogs_path %> |
+  <%= link_to 'Go to Topics', topics_path %>
+
+</div>
+
+<%#= link_to 'Back to topics', topics_path %>

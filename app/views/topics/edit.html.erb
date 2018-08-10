@@ -1,0 +1,18 @@
+<div class = "container">
+	<hr>
+	<h2> Create a new Topic</h2>
+	<%= render "form", topic: @topic %>
+	<hr>
+	<br>
+	<h2>Manage Topics</h2>
+	<div class = "row">
+		<% @topics.each do |topic| %>
+			<div class= "col-md-6">
+				<h2> <%= link_to topic.title, topic %></h2>
+				<%= render "form", topic: topic %>
+			</div>
+		<% end %>
+	</div>
+	<br>
+	<%= link_to 'Back to Topics', topics_path %>
+</div>

@@ -1,11 +1,24 @@
 class TopicsController < ApplicationController
-  before_action :set_topic, only: [:update, :destroy]
-  layout "application"
-  access all: [], user: {except: [:index, :destroy, :create, :update]}, site_admin: :all
+  before_action :set_topic, only: [:show, :update, :destroy]
+  layout "blog"
+  access all: [:show, :index], user: {except: [:destroy, :create, :update]}, site_admin: :all
 
   def index
       @topics = Topic.all   
       @topic = Topic.new  
+  end
+
+  def show
+    if logged_in?(:site_admin)
+      @blogs = @topic.blogs.recent.page(params[:page]).per(5)
+    else
+      @blogs = @topic.blogs.recent.published.page(params[:page]).per(5)      
+    end
+  end
+
+  def edit
+    @topics = Topic.all   
+    @topic = Topic.new  
   end
 
   def create

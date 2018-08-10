@@ -85,7 +85,7 @@ class BlogsController < ApplicationController
        @blog.draft!
     end
 
-      redirect_to blogs_url, notice: 'Blog status successfully updated.'
+      redirect_to request.referrer, notice: 'Blog status successfully updated.'
   end
 
   def toggle_featured
@@ -100,7 +100,7 @@ class BlogsController < ApplicationController
        @blog.not_featured!
     end
 
-      redirect_to blogs_url, notice: 'Blog featured successfully updated.'
+      redirect_to request.referrer, notice: 'Blog featured successfully updated.'
   end
 
   private
