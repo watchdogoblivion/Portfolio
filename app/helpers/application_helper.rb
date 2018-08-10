@@ -211,7 +211,7 @@ module ApplicationHelper
 	end
 
 	def alert_generator msg
-		js add_gritter(msg, title: "#{current_user.first_name}", sticky: false)
+		js add_gritter(msg, title: "#{current_user.first_name}", sticky: false, time: 1700)
 	end
 end
 
