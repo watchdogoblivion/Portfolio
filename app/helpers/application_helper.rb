@@ -21,6 +21,8 @@ module ApplicationHelper
 	end
 
 	def nav_items
+
+		nav_items = 
 		[
 			{
 				url: root_path,
@@ -43,6 +45,18 @@ module ApplicationHelper
 				title: "Portfolios"
 			}
 		]
+
+		admin_items = {
+				url: topics_path,
+				title: "Topics"
+			}
+
+	    if logged_in?(:site_admin)
+	    	
+	    	return nav_items.insert(3, admin_items)
+		else
+			return nav_items
+		end
 	end
 
 

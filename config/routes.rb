@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'more-about-me', to: 'pages#more_about_me'
   get 'certifications', to: 'pages#certifications'
 
+  resources :topics
+
   resources :blogs do 
   	member do 
   		get :toggle_status
