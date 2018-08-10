@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   get 'more-about-me', to: 'pages#more_about_me'
   get 'certifications', to: 'pages#certifications'
 
-  resources :topics
+  resources :topics, except: [:edit]
+
+  get 'edit_topic', to: 'topics#edit', as: 'edit_topic'
 
   resources :blogs do 
   	member do 
