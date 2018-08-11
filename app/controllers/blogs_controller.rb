@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
 
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status, :toggle_featured]
-  before_action :set_sidebar_topics, only: [:index, :show]
+  before_action :set_sidebar_topics, except: [:toggle_featured, :toggle_status, :destroy]
   access all: [:show, :index], 
          user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status, :toggle_featured]}, 
          site_admin: :all
@@ -63,6 +63,12 @@ class BlogsController < ApplicationController
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
   def update
+     @featured_blogs = Blog.all
+    if @blog.not_featured?
+      @featured_blogs.each do |blog|
+        blog.not_featured!
+      end
+    end
     respond_to do |format|
       if @blog.update(blog_params)
         format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
@@ -106,7 +112,7 @@ class BlogsController < ApplicationController
        @blog.not_featured!
     end
 
-      redirect_to request.referrer, notice: 'Blog featured successfully updated.'
+    redirect_to request.referrer, notice: 'Blog featured successfully updated.'
   end
 
   private
@@ -117,7 +123,7 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :body, :topic_id)
+      params.require(:blog).permit(:title, :body, :topic_id, :status, :featured)
     end
 
     def set_sidebar_topics
