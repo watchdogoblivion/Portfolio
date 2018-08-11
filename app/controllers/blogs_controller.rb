@@ -1,7 +1,8 @@
 class BlogsController < ApplicationController
 
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status, :toggle_featured]
-  before_action :set_sidebar_topics, except: [:toggle_featured, :toggle_status, :destroy]
+  before_action :set_featured, only:[:index, :update, :published_blogs, :drafted_blogs, :toggle_featured]
+  before_action :set_sidebar_topics, except: [ :toggle_status, :destroy]
   access all: [:show, :index], 
          user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status, :toggle_featured]}, 
          site_admin: :all
@@ -17,9 +18,17 @@ class BlogsController < ApplicationController
     else
       @blogs = Blog.recent.published.page(params[:page]).per(5)      
     end
-    @featured_blogs = Blog.all
     @page_title = "My Portfolio Blog"
 
+  end
+
+  def published_blogs
+    @blogs = Blog.published_blogs.recent.page(params[:page]).per(5)
+  end
+
+  def drafted_blogs
+    @blogs = Blog.drafted_blogs.recent.page(params[:page]).per(5)
+    @featured_blogs = Blog.drafted_blogs
   end
 
   # GET /blogs/1
@@ -63,14 +72,9 @@ class BlogsController < ApplicationController
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
   def update
-     @featured_blogs = Blog.all
-    if @blog.not_featured?
-      @featured_blogs.each do |blog|
-        blog.not_featured!
-      end
-    end
     respond_to do |format|
       if @blog.update(blog_params)
+        toggle_featured
         format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
         format.json { render :show, status: :ok, location: @blog }
       else
@@ -90,7 +94,7 @@ class BlogsController < ApplicationController
   end
 
   def toggle_status
-    
+  
     if @blog.draft?
        @blog.published!
     elsif @blog.published?
@@ -100,25 +104,27 @@ class BlogsController < ApplicationController
       redirect_to request.referrer, notice: 'Blog status successfully updated.'
   end
 
-  def toggle_featured
-    @featured_blogs = Blog.all
-    
-    if @blog.not_featured?
-      @featured_blogs.each do |blog|
-        blog.not_featured!
+  private
+
+    def toggle_featured
+
+      unless @blog.not_featured?
+        @featured_blogs.each do |blog|
+          unless @blog == blog
+            blog.not_featured!
+          end
+        end
       end
-       @blog.featured!
-    elsif @blog.featured?
-       @blog.not_featured!
+
     end
 
-    redirect_to request.referrer, notice: 'Blog featured successfully updated.'
-  end
-
-  private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
       @blog = Blog.friendly.find(params[:id])
+    end
+
+    def set_featured
+      @featured_blogs = Blog.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

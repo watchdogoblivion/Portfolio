@@ -23,21 +23,20 @@
   
   <div class="form-group">
     <%= form.label :status, "Draft" %>
-    <%= form.radio_button :status, "draft" %>
+    <%= form.radio_button :status, "draft"  %>
 
     <%= form.label :status, "Published" %>
-    <%= form.radio_button :status, "published" %>
+    <%= form.radio_button :status, "published"  %>
   </div>
 
   <div class="form-group">
     <%= form.label :featured, "Featured"%>
-    <%= form.radio_button :featured,"featured" %>
+    <%= form.radio_button :featured,"featured"%>
 
     <%= form.label :featured, "Not Featured" %>
-    <%= form.radio_button :featured, "not_featured" %>
+    <%= form.radio_button :featured, "not_featured"%>
   </div>
 
-<!-- url: {action: "create"} -->
   <div class="form-group">
     <%#= form.label :body %>
     <%= form.text_area :body, class: "form-control", rows: 15, placeholder: "Content" %>

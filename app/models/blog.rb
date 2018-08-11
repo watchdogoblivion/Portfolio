@@ -15,4 +15,7 @@ class Blog < ApplicationRecord
      def self.recent
      	order("created_at DESC")
      end
+
+     scope :published_blogs, -> {where(status: 'published')}
+     scope :drafted_blogs, -> {where(status: 'draft')}
 end
