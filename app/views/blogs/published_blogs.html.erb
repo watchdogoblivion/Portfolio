@@ -4,8 +4,7 @@
   <h3 class="pb-3 mb-4 font-italic">
     <%= link_to 'Write a new Blog', new_blog_path if logged_in?(:site_admin)%> |
     <%= link_to 'Published Blogs', published_path if logged_in?(:site_admin)%> |
-    <%= link_to 'Drafted Blogs', draft_path if logged_in?(:site_admin)%> | 
-    <%= link_to 'All Blogs', blogs_path if logged_in?(:site_admin)%>
+    <%= link_to 'Drafted Blogs', draft_path if logged_in?(:site_admin)%>
   </h3>
 
   <%= paginate @blogs %>
@@ -17,7 +16,3 @@
   <%= paginate @blogs %>
 
 </div>
-
-
-
-
