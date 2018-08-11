@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   resources :topics, except: [:edit]
 
   get 'edit_topic', to: 'topics#edit', as: 'edit_topic'
+  # get 'published', to: 'blogs#published'
+  # get 'published', to: 'blogs#draft'
 
   resources :blogs do 
   	member do 
