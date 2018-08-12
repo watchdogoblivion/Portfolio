@@ -22,13 +22,18 @@ module BlogsHelper
 		markdown_to_html = Redcarpet::Markdown.new(coderayified, options)
 		markdown_to_html.render(text).html_safe
 	end
-    
+
     def blog_head_links
     	if logged_in?(:site_admin)
-	    	(link_to 'Write a new Blog', new_blog_path) + " | ".html_safe +
-	    	(link_to 'Published Blogs', published_path) + " | ".html_safe +
-	    	(link_to 'Drafted Blogs', draft_path) + " | ".html_safe + 
-	    	(link_to 'All Blogs', blogs_path)
+    		'<nav class="breadcrumb">'.html_safe + 
+	    	(link_to 'Write a new Blog', new_blog_path, class:"breadcrumb-item") +
+            ' '.html_safe +
+	    	(link_to 'Published Blogs', published_path, class:"breadcrumb-item") + 
+	    	' '.html_safe +
+	    	(link_to 'Drafted Blogs', draft_path, class:"breadcrumb-item") + 
+	    	' '.html_safe +
+	    	(link_to 'All Blogs', blogs_path, class:"breadcrumb-item") + 
+	    	'</nav>'.html_safe
 	    end 
     end
 
@@ -42,4 +47,33 @@ module BlogsHelper
     	end
     	string
     end
+
+    def icons_helper(object, css_class="")
+    	if logged_in?(:site_admin)
+			   (link_to fa_icon("file-text"), toggle_status_blog_path(object), class: css_class, style: icon_color(object, "file")) + " ".html_safe +
+			   (link_to fa_icon("star"), toggle_featured_blog_path(object), class: css_class, style: icon_color(object,"star")) + " ".html_safe +
+			   (link_to fa_icon("pencil-square-o"), edit_blog_path(object), class: css_class ) + " ".html_safe +
+	           (link_to fa_icon("trash"), object, method: :delete, data: { confirm: 'Are you sure?' }, class: css_class)
+		end
+    end
+
+    def icon_color(object, icon = "")
+       case icon
+		when "file"
+		  if object.draft?
+		  	'color: red;'
+		  else
+		  	'color: green;'
+		  end
+		when "star"
+		  if object.featured?
+		  	'color: yellow;'
+		  else
+		  	'color: grey;'
+		  end
+		else
+		  ""
+		end
+    end
+
 end
