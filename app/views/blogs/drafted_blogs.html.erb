@@ -2,9 +2,7 @@
 
 <div class="col-md-8 blog-main">
   <h3 class="pb-3 mb-4 font-italic">
-    <%= link_to 'Write a new Blog', new_blog_path if logged_in?(:site_admin)%> |
-    <%= link_to 'Published Blogs', published_path if logged_in?(:site_admin)%> |
-    <%= link_to 'Drafted Blogs', draft_path if logged_in?(:site_admin)%>
+    <%= blog_head_links %> 
   </h3>
 
   <%= paginate @blogs %>
