@@ -1,27 +1,31 @@
 <div class="background-about" id="background"></div> 
-<div class = "row">
-	<div class = "col-md-4">
-		<br><br>
-		<%= image_tag "profile.png", height: 450, alt: "Portfolio image" %>
-	</div>
-	<div class="col-md-8" style="color: white;">
-		<h1>About me</h1>
-		<p>I have been programming for a few years. I have a bachelors degree in Software developement. I have certifications through Comptia, Oracle, and CIW. My highest certification is the Oracle certified Java professional programmer. I have written projects in Java, javascript, ruby, python, and C#. I have also created android applications in java. I have utilized html, css, and xml on a constant. My language of preference is java, since I have had the most experience with it, however I am very happy to work with any language. Even through all my experience I am still learning I hope to be the best programmer that I can be.</p>
-		<br>
-		<p>Having coded in multiple languages, I have come to find that the success of a project is dependent on multiple
-		factors. To achieve our goals as efficiently as possible, it is important that we work on ourselves as a team and as individuals on a constant basis. It is true that we should always set end goals, but the ultimate end goal should in fact be a never ending one. The goal to be the best that we can be in every way by using every accomplishment as a stepping stone to reach even greater heights than anyone else, including ourselves.</p>
-
-
-	</div>
+<div class = "container">
 	<div class = "row">
-		<div class = "col-md-7">
-			<button class = "button"><%= link_to "More About Me", more_about_me_path %></button>
-		</div>
 		<div class = "col-md-5">
-			<button class = "button"><%= link_to "Certifications", certifications_path %></button>
+			<br><br>
+			<%= image_tag "profile.png", height: 450, alt: "Portfolio image" %>
+			<div class = "row">
+			<div class = "col-md-6">
+					<br>
+					<button class = "button text-sizing"><%= link_to "More About Me", more_about_me_path%></button>
+				</div>
+				<div class = "col-md-6">
+					<br>
+					<button class = "button text-sizing"><%= link_to "Certifications", certifications_path %></button>
+				</div>
+		    </div>
 		</div>
-    </div>
-	
-	<%#= " <a href='#{contact_path}'>Contact</a> ".html_safe %>
+		<div class="col-md-7" style="color: white;">
+			<div class = "app-card-container">
+				<div class = "card">
+					<h1>About me</h1>
+					<p>I have been programming for a few years. I have a bachelors degree in Software developement. I have certifications through Comptia, Oracle, and CIW. My highest certification is the Oracle certified Java professional programmer. I have written projects in Java, javascript, ruby, python, and C#. I have also created android applications in java. I have utilized html, css, and xml on a constant. My language of preference is java, since I have had the most experience with it, however I am very happy to work with any language. Even through all my experience I am still learning I hope to be the best programmer that I can be.</p>
+					<br>
+					<p>Having coded in multiple languages, I have come to find that the success of a project is dependent on multiple
+					factors. To achieve our goals as efficiently as possible, it is important that we work on ourselves as a team and as individuals on a constant basis. It is true that we should always set end goals, but the ultimate end goal should in fact be a never ending one. The goal to be the best that we can be in every way by using every accomplishment as a stepping stone to reach even greater heights than anyone else, including ourselves.</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 

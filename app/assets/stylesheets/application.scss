@@ -151,7 +151,7 @@ body {
 }
 
 .background-about{
-  background: image-url('back8.png') no-repeat; 
+  background: image-url('tech.png') no-repeat; 
 }
 .background-more{
   background: image-url('weights.jpg') no-repeat; 
@@ -190,3 +190,16 @@ body {
   color: black;
 }
 
+.app-card-container{
+  color: black;
+  background-color: blue;
+}
+
+.app-card-container .card{
+  background-color: #034f84;
+  padding: 40px;
+}
+
+.text-sizing{
+ font-size: 15px;
+}
