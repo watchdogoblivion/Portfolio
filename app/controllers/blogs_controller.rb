@@ -74,7 +74,7 @@ class BlogsController < ApplicationController
   def update
     respond_to do |format|
       if @blog.update(blog_params)
-        toggle_featured
+        feature
         format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
         format.json { render :show, status: :ok, location: @blog }
       else
@@ -100,14 +100,34 @@ class BlogsController < ApplicationController
     elsif @blog.published?
        @blog.draft!
     end
+  redirect_to request.referrer, notice: 'Blog status successfully updated.'
+ #redirect_back(fallback_location: fallback_location)
+ #redirect_to blogs_path, notice: 'Blog status successfully updated.'
+    
+  end
 
+  def toggle_featured
+    @featured_blogs = Blog.all
+    
+    if @blog.not_featured?
+      @featured_blogs.each do |blog|
+        blog.not_featured!
+      end
+       @blog.featured!
+    elsif @blog.featured?
+       @blog.not_featured!
+    end
       redirect_to request.referrer, notice: 'Blog status successfully updated.'
+      #redirect_to blogs_path, notice: 'Blog feature successfully updated.'
+  end
+
+  def path_to_url(path)
+    "#{request.protocol}#{request.host_with_port.sub(/:80$/,"")}/#{path.sub(/^\//,"")}"
   end
 
   private
 
-    def toggle_featured
-
+    def feature
       unless @blog.not_featured?
         @featured_blogs.each do |blog|
           unless @blog == blog
@@ -115,7 +135,6 @@ class BlogsController < ApplicationController
           end
         end
       end
-
     end
 
     # Use callbacks to share common setup or constraints between actions.
