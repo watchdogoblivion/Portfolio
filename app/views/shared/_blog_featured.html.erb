@@ -10,11 +10,7 @@
                   <div class="mb-1 text-muted">
                     <%= distance_of_time_in_words( featured_blog.created_at, Time.now) %> ago
                   </div>
-                  <% if featured_blog.body.length > 320 %>
-                    <p class = "featured-body"><%= featured_blog.body[0,320] + "...." %></p>
-                  <% else %>
-                    <p class = "featured-body"><%= featured_blog.body %></p>
-                  <% end %>
+                    <p class = "featured-body"><%= markdown line_limiter(featured_blog.body, 5) %></p>
                   <p><%= link_to "Continue reading", featured_blog%></p>
                 <% end %>
                <% end %>

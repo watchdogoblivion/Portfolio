@@ -1,20 +1,10 @@
 <% @blogs.each do |blog| %>
 	<div class="blog-post">
 		<h2 class="blog-post-title"><%= link_to blog.title, blog %></h2>
-		<p class="blog-post-meta">Published <%= blog.created_at.strftime("%F") %></p>
-		<% if logged_in?(:site_admin)%>
-			<p class="blog-post-meta">
-				<%= blog.status%> /
-				<%= link_to 'Edit', edit_blog_path(blog)%> /
-				<%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }%>		
-			</p>
-		<% end %>
-
-		<% if blog.body.length > 445 %>
-			<p class = "blog-body"><%= blog.body[0,445] + "...." %></p>
-		<% else %>
-			<p class = "blog-body"><%= blog.body %></p>
-		<% end %>
+		<p class="blog-post-meta">Created <%= blog.created_at.strftime("%F") %></p>
+		<p class="blog-post-meta"></p>
+		<p class = "blog-body"><%= markdown line_limiter(blog.body, 11) %></p>
+		
 	</div>
 <% end %>
 

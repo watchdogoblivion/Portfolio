@@ -1,12 +1,17 @@
 <div class="col-md-8 blog-main">
 
-  <h2 class="pb-3 mb-4 font-italic"><%= @blog.title %></h2>
-  <p><%= @blog.topic.title %></p>
+  <h2 class="font-italic breadcrumb-item active"><%= @blog.title %></h2>
 
-  <%= link_to 'Edit Blog', edit_blog_path(@blog) if logged_in?(:site_admin) %> |
-  <%= link_to 'Go to blogs', blogs_path %> |
-  <%= link_to 'Go to Topics', topics_path %>
-
+  <nav class="breadcrumb">
+      <%= link_to @blog.topic.title, topic_path(@blog.topic.id), class:"breadcrumb-item" %>
+      <%= link_to 'Blogs', blogs_path, class:"breadcrumb-item" %>
+      <span class="ml-auto">
+        <%= link_to fa_icon("pencil-square-o"), edit_blog_path(@blog) if logged_in?(:site_admin) %>
+        <%= link_to fa_icon("trash"), @blog, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %>
+      </span>
+  </nav>
+  
+<%#= link_to 'Edit Blog', edit_blog_path(@blog) , class:"breadcrumb-item"  %>
   <p><%= markdown @blog.body %></p>
 
   <%= render "comments/comment_form" %>
