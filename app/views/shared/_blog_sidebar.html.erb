@@ -10,7 +10,7 @@
  
     <div class="p-3">
       <h3 class="font-italic" style = "text-decoration: underline;"><%= link_to "Topics", topics_path%></h3>
-      <% @side_bar_topics.each do |topic| %>
+      <% @side_bar_topics.order("topics.title ASC").each do |topic| %>
         <p><%= link_to topic.title, topic_path(topic) %></p>
       <% end %>
     </div>

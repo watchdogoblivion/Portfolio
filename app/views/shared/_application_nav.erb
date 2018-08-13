@@ -1,11 +1,13 @@
 <body class="text-center">
-    <header class="masthead mb-auto">
-	    <div class="inner">
+    <div class="row ghg masthead mb-auto ">
+    	<div class= "col-md-4 ">
 	    	<% unless current_page? certifications_path%>
 	      		<h3 class="masthead-brand">Samuel Dorilas</h3>
 	      	<% else %>
 		        <h3 class="masthead-brand color-one" >Samuel Dorilas</h3>
             <% end %>
+        </div>
+        <div class= "col-md-8">
 	        <nav class="nav nav-masthead justify-content-center">
 		      	<% unless current_page? certifications_path%>
 		      		<%= nav_helper("nav-link") %>
@@ -16,5 +18,5 @@
 		        <% end %>
 	        </nav>
 	    </div>
-    </header>
+    </div>
 </body>
