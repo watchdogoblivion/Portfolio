@@ -1,20 +1,19 @@
- 
-    <div class="col-md-12">
-      <div class="card flex-md-row mb-4 shadow-sm">
-        <div class="card-body d-flex flex-column align-items-start">
-            <div >
-              <h3 class= "featured-post">Featured post</h3>
-              <div class= "blog-title"><%= @featured_blogs.last.title %></div>
+ <div class="col-md-12">
+  <div class="card flex-md-row mb-4 shadow-sm">
+    <div class="card-body d-flex flex-column align-items-start">
+        <div >
+          <h3 class= "featured-post">Featured post</h3>
+          <% @featured_blogs.each do |featured_blog| %>
+            <% if featured_blog.featured? && featured_blog.published? %>
+              <div class= "blog-title"><%= featured_blog.title %></div>
               <div class="mb-1 text-muted">
-                <%= distance_of_time_in_words( @featured_blogs.last.created_at, Time.now) %> ago
+                <%= distance_of_time_in_words( featured_blog.created_at, Time.now) %> ago
               </div>
-              <% if @featured_blogs.last.body.length > 320 %>
-                <p class = "featured-body"><%= @featured_blogs.last.body[0,320] + "...." %></p>
-              <% else %>
-                <p class = "featured-body"><%= @featured_blogs.last.body %></p>
-              <% end %>
-              <p><%= link_to "Continue reading", @featured_blogs.last%></p>
-            </div>
-        </div> 
-      </div>
+                <p class = "featured-body"><%= markdown line_limiter(featured_blog.body, 3) %></p>
+              <p><%= link_to "Continue reading", featured_blog%></p>
+            <% end %>
+           <% end %>
+        </div>
     </div> 
+  </div>
+</div> 

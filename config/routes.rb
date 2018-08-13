@@ -14,11 +14,20 @@ Rails.application.routes.draw do
   get 'more-about-me', to: 'pages#more_about_me'
   get 'certifications', to: 'pages#certifications'
 
+  resources :topics, except: [:edit]
+
+  get 'edit_topic', to: 'topics#edit', as: 'edit_topic'
+ 
+
   resources :blogs do 
   	member do 
   		get :toggle_status
+      get :toggle_featured
   	end
   end
+
+  get 'published', to: 'blogs#published_blogs'
+  get 'draft', to: 'blogs#drafted_blogs'
 
   mount ActionCable.server => '/cable'
 

@@ -1,7 +1,7 @@
 <% @portfolio_items.each do |portfolio_item| %>
 	<div class="col-md-4">
 		<div class="card mb-4 shadow-sm" data-id= "<%= portfolio_item.id %>">
-			<%= image_tag portfolio_img(portfolio_item.thumb_image.url, "thumb") %>
+		<%= image_tag portfolio_img(portfolio_item.thumb_image.url, "thumb"), width: '100%'  %>
 			<div class="card-body">
 				<p class="card-text">
 					<span><%=  portfolio_item.title %></span>
@@ -15,6 +15,9 @@
 					 	<% if logged_in?(:site_admin) %>
 						 	<button type="button" class="btn btn-sm btn-outline-secondary">
 						 		<%= link_to "Edit", edit_portfolio_path(portfolio_item.id) %>
+						 	</button>
+						 	<button type="button" class="btn btn-sm btn-outline-secondary">
+						 		<%= link_to "Delete",portfolio_item, method: :delete, data: { confirm: 'Are you sure?' } %>
 						 	</button>
 					 	<% end %>
 					</div>

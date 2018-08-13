@@ -1,4 +1,3 @@
-
 <%= form_with(model: blog, local: true) do |form| %>
   <% if blog.errors.any? %>
     <% blog.errors.full_messages.each do |error| %>
@@ -9,6 +8,33 @@
   <div class="form-group">
     <%#= form.label :title %>
     <%= form.text_field :title, class: "form-control", placeholder: "Title" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :topic_id %>
+    <%= form.collection_select(:topic_id, Topic.all, :id, :title,
+                              { selected: blog.topic_id,
+                                include_blank: true
+                              },
+                              class: 'form-control'
+                                )  
+    %>
+  </div>
+  
+  <div class="form-group">
+    <%= form.label :status, "Draft" %>
+    <%= form.radio_button :status, "draft"  %>
+
+    <%= form.label :status, "Published" %>
+    <%= form.radio_button :status, "published"  %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :featured, "Featured"%>
+    <%= form.radio_button :featured,"featured"%>
+
+    <%= form.label :featured, "Not Featured" %>
+    <%= form.radio_button :featured, "not_featured"%>
   </div>
 
   <div class="form-group">

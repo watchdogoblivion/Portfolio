@@ -9,10 +9,11 @@ module ApplicationHelper
         end
 	end
 
-	def source_helper
+	def source_helper(styles)
 	    if session[:source] 
-	    	greeting = "Thanks for visiting me from #{session[:source]}"
-		    content_tag(:p, greeting, class: "source-greeting")
+	    	greeting = "Thanks for visiting me from #{session[:source]}, 
+	    	please feel free to #{ link_to 'contact me', contact_path} if you would like to work together."
+		    content_tag(:div, greeting.html_safe, class: styles)
 	    end 
 	end
 
@@ -21,6 +22,8 @@ module ApplicationHelper
 	end
 
 	def nav_items
+
+		nav_items = 
 		[
 			{
 				url: root_path,
@@ -35,14 +38,16 @@ module ApplicationHelper
 				title: "Contact"
 			},
 			{
-				url: blogs_path,
-				title: "Blogs"
-			},
-			{
 				url: portfolios_path,
 				title: "Portfolios"
+			},
+			{
+				url: blogs_path,
+				title: "Blogs"
 			}
+			
 		]
+
 	end
 
 
@@ -58,7 +63,15 @@ module ApplicationHelper
 	end
 
 	def active? root_path
-		"active" if current_page? root_path
+		"active" if this_page(root_path)
+	end
+
+	def this_page root_path
+		if current_page? root_path
+			true
+		else 
+			false
+		end
 	end
 
 	def about_me_items
@@ -211,7 +224,12 @@ module ApplicationHelper
 	end
 
 	def alert_generator msg
-		js add_gritter(msg, title: "#{current_user.first_name}", sticky: false)
+		js add_gritter(msg, title: "#{current_user.first_name}", sticky: false, time: 1700, :position => :bottom_left)
+		
+	end
+
+	def alert_position
+		js extend_gritter :position => :top_left 
 	end
 end
 

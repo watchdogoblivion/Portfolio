@@ -1,27 +1,138 @@
 <div class="background-about" id="background"></div> 
-<div class = "row">
-	<div class = "col-md-4">
-		<br><br>
-		<%= image_tag "profile.png", height: 450, alt: "Portfolio image" %>
-	</div>
-	<div class="col-md-8" style="color: white;">
-		<h1>About me</h1>
-		<p>I have been programming for a few years. I have a bachelors degree in Software developement. I have certifications through Comptia, Oracle, and CIW. My highest certification is the Oracle certified Java professional programmer. I have written projects in Java, javascript, ruby, python, and C#. I have also created android applications in java. I have utilized html, css, and xml on a constant. My language of preference is java, since I have had the most experience with it, however I am very happy to work with any language. Even through all my experience I am still learning I hope to be the best programmer that I can be.</p>
-		<br>
-		<p>Having coded in multiple languages, I have come to find that the success of a project is dependent on multiple
-		factors. To achieve our goals as efficiently as possible, it is important that we work on ourselves as a team and as individuals on a constant basis. It is true that we should always set end goals, but the ultimate end goal should in fact be a never ending one. The goal to be the best that we can be in every way by using every accomplishment as a stepping stone to reach even greater heights than anyone else, including ourselves.</p>
-
-
-	</div>
+<br>
+<div class = "container">
 	<div class = "row">
-		<div class = "col-md-7">
-			<button class = "button"><%= link_to "More About Me", more_about_me_path %></button>
-		</div>
 		<div class = "col-md-5">
-			<button class = "button"><%= link_to "Certifications", certifications_path %></button>
+			<br><br>
+			<%= image_tag "profile.png", height: 500, alt: "Portfolio image" %>
+			<div class = "row">
+			<div class = "col-md-6">
+					<br>
+					<button class = "button text-sizing"><%= link_to "More About Me", more_about_me_path%></button>
+				</div>
+				<div class = "col-md-6">
+					<br>
+					<button class = "button text-sizing"><%= link_to "Certifications+", certifications_path %></button>
+				</div>
+		    </div>
 		</div>
-    </div>
-	
-	<%#= " <a href='#{contact_path}'>Contact</a> ".html_safe %>
+
+		<div class="col-md-7" style="color: white;">
+			<div class = "app-card-container">
+				<div class = "card card-width">
+					<h1>About me</h1>
+					<p>I have been programming for a few years. I have a bachelors degree in Software developement. I have certifications through Comptia, Oracle, and CIW. My highest certification is the Oracle certified Java professional programmer. I have written projects in Java, javascript, ruby, python, and C#. I have also created android applications in java. I have utilized html, css, and xml on a constant. My language of preference is java, since I have had the most experience with it, however I am very happy to work with any language. Even through all my experience I am still learning I hope to be the best programmer that I can be.</p>
+					<br>
+					<p>Having coded in multiple languages, I have come to find that the success of a project is dependent on multiple
+					factors. To achieve our goals as efficiently as possible, it is important that we work on ourselves as a team and as individuals on a constant basis. It is true that we should always set end goals, but the ultimate end goal should in fact be a never ending one. The goal to be the best that we can be in every way by using every accomplishment as a stepping stone to reach even greater heights than anyone else, including ourselves.</p>
+
+					<p class="navbar-dark" > 
+					    <button  class="navbar-toggler button-icon" 
+					     type="button" 
+					     data-toggle="collapse" 
+					     data-target="#jobHistory" 
+					     aria-controls="jobHistory" 
+					     aria-expanded="false">
+					      <span class="navbar-toggler-icon toggler-button"></span>
+					    </button> &nbsp; Job History &emsp;&emsp; 
+
+					    <button  class="navbar-toggler button-icon" 
+					    type="button" 
+					    data-toggle="collapse" 
+					    data-target="#education" 
+					    aria-controls="education" 
+					    aria-expanded="false">
+					      <span class="navbar-toggler-icon toggler-button"></span>
+					    </button> &nbsp; Education 
+					</p>
+						
+
+					<p>
+						<div class = "collapse left-align" id="jobHistory">
+							<div class= "card card-block">
+								<div>
+									<mark>Company:</mark>Self employed<br> 
+									<mark>Job title:</mark> Freelance Personal Trainer<br> 
+									<mark>Job description:</mark>Assess and evaluate client needs to assist them in reaching their physical and health goals. Provided unique, dynamic, and individualized fitness training regimens. Demonstrate to and instruct clients on proper techniques to reduce likelyhood of injuries. 
+								</div>
+							</div>
+							<div class= "card card-block">
+								<div>
+									<mark>Company:</mark>Massachusetts General Hospital <br>
+									<mark>Job title:</mark> Physical Therapy Aide <br> 
+									<mark>Job description:</mark>Skillfully assissted in physically treating patients/clients of varied diagnoses, resulting in improved function and mobility. Ensured that all documentation was written and completed in a timely manner.
+									Acquired and delivered physical agents to help relieve pain and disability caused by disease or injury as directed by the physical therapist's plan of care. 
+								</div>
+							</div>
+							<div class= "card card-block">
+								<div>
+									<mark>Company:</mark>Umass Boston Beacon Fitness Center <br>
+									<mark>Job title:</mark> Personal Trainer <br> 
+									<mark>Job description:</mark>Evaluated member needs and assisted them in achieving their personal fitness goals. Taught clients how to modify exercises appropriately to decrease probability of injury. Promoted fitness facility in order to recruit new members and increase sales. Maintained and organized all equipment in the recreation and fitness facility.
+								</div>
+							</div>
+							<div class= "card card-block">
+								<div>
+									<mark>Company:</mark>Umass Boston Beacon Fitness Center <br>
+									<mark>Job title:</mark> Front Desk Receptionist <br> 
+									<mark>Job description:</mark>Organized and scheduled registrations and appointments for the fitness facilities athletic, health, and recreational programs. Monitored  incoming calls and answered queries from customers. Handles and maintained multiple cash transactions.
+								</div>
+							</div>
+							<div class= "card card-block">
+								<div>
+									<mark>Company:</mark>Benjamin Healthcare Center<br>
+									<mark>Job title:</mark> Dietary Aid <br> 
+									<mark>Job description:</mark>Prepare and label food for the elderly with allergies and dietary or fluid restrictions; Organize daily eating schedule and seating for patients; implement hygiene standards and procedures. 
+								</div>
+							</div>
+							<div class= "card card-block">
+								<div>
+									<mark>Company:</mark>UMass Boston Bookstore Follett<br>
+									<mark>Job title:</mark> Cashier/Sales Associate <br> 
+									<mark>Job description:</mark> Provided technical assistance to customers and supplied needed information on materials; Completed rental and purchased transactions; Acquired and supplied ordered materials. 
+								</div>
+							</div>
+							<div class= "card card-block">
+								<div>
+									<mark>Company:</mark>Wakefield Estate<br>
+									<mark>Job title:</mark> Agricultural Attendant <br> 
+									<mark>Job description:</mark> Served many functions: as secretary to manager—categorized and organized documentations for trust fund; As caretaker, oversaw health of small animals such as chickens and turtles; As a gardener: mulched, pruned, and weeded gardening areas.
+								</div>
+							</div>
+						</div>
+
+						<div class = "collapse left-align" id="education">
+							<div class= "card card-block">
+								<div>
+									<mark>School:</mark> Western Governors University<br> 
+									<mark>Degree:</mark>B.S. in Software Devlopment<br>
+									<mark>Graduation Date:</mark> August 2018
+								</div>
+							</div>
+							<div class= "card card-block">
+								<div>
+									<mark>School:</mark> University of Massachusetts Boston<br> 
+									<mark>Degree:</mark>B.S. in Exercise and Health Sciences<br>
+									<mark>Graduation Date:</mark> December 2016
+								</div>
+							</div>
+							<div class= "card card-block">
+								<div>
+									<mark>School:</mark> Milton High School<br> 
+									<mark>Degree:</mark> High School Diploma<br>
+									<mark>Graduation Date:</mark> May 2012
+								</div>
+							</div>
+						</div>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
+
+
+
+
+<%#= markdown string = "<mark>Company:</mark> Wakefield Estate Job title: Agricultural Attendant <br> Job description: Served many functions: as secretary to manager—categorized and organized documentations for trust fund; As caretaker, oversaw health of small animals such as chickens and turtles; As a gardener: mulched, pruned, and weeded gardening areas."%>

@@ -1,0 +1,9 @@
+<div class="col-md-8 blog-main">
+    <h1>Topics
+    <% if logged_in?(:site_admin) %>
+	/ <%= link_to "Edit Topics", edit_topic_path %>
+	<% end %>
+    </h1>
+    <hr>
+    <%= render "topic" %>
+</div>

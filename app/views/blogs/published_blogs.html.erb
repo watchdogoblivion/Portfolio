@@ -1,0 +1,8 @@
+<%= render "shared/blog_featured", blogs: @blogs, featured_blogs: @featured_blogs %>
+<div class="col-md-8 blog-main">
+  <%= blog_head_links %>
+  <%= paginate @blogs %>
+  <br>
+  <%= render "blog" %>
+  <%= paginate @blogs %>
+</div>
