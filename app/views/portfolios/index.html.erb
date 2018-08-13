@@ -1,6 +1,6 @@
 <div class = "container">
 	<div class="skills">
-		<% Skill.all.order("id ASC").each do |skill| %>
+		<% Skill.all.order("percent_utilized DESC").each do |skill| %>
 			<div class="skill">
 			    <h4><%= skill.title %></h4>
 			    <div class="progress">
