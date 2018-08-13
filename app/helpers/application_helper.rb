@@ -224,7 +224,12 @@ module ApplicationHelper
 	end
 
 	def alert_generator msg
-		js add_gritter(msg, title: "#{current_user.first_name}", sticky: false, time: 1700)
+		js add_gritter(msg, title: "#{current_user.first_name}", sticky: false, time: 1700, :position => :bottom_left)
+		
+	end
+
+	def alert_position
+		js extend_gritter :position => :top_left 
 	end
 end
 
