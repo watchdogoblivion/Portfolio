@@ -1,8 +1,8 @@
 <% @blogs.each do |blog| %>
 	<div class="blog-post">
-		<p class="blog-post-title"><%= link_to blog.title, blog %>
+		<h4 class="blog-post-title"><%= link_to blog.title, blog %>
 			<%= icons_helper(blog, "blogicons") %>
-		</p2>
+		</h4>
 		<p class="blog-post-meta">Created <%= blog.created_at.strftime("%F") %></p>
 		<p class = "blog-body"><%= markdown line_limiter(blog.body, 11) %></p>	
 	</div>
