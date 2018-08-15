@@ -3,21 +3,33 @@
 <div class="col-md-12">
   
     <main class="home-card" >
+      <div class="container" style="padding-top: 5%">
       <h1 class="cover-heading">Welcome!</h1>
-      <p class="lead"> 
-      	<h3>"A clever person solves a problem.<h2>
-          <h3>A wise person AVOIDS it."<h2>
-          <h5>- Albert Einstein<h5>
-      </p>
-      <p class="lead">
-        <%= link_to "About Me", about_me_path, class: "btn btn-lg btn-secondary" %>
-      </p>
+        <p class="lead"> 
+
+          <script>
+            $(function(){
+                $(".element").typed({
+                  strings: ['"A clever person solves a problem. ^750 <br> A wise person AVOIDS it." ^750 <br> - Albert Einstein'],
+                  typeSpeed: 0
+                });
+            });
+          </script>
+        	<span class= "element" style="width: 10%"></span>
+           
+        </p>
+        <p class="lead">
+          <%= link_to "About Me", about_me_path, class: "btn btn-lg btn-secondary" %>
+        </p>
+      </div>
     </main>
   
 </div>
 
 
-
+<!-- <h3>"A clever person solves a problem.<h2>
+          <h3>A wise person AVOIDS it."<h2>
+          <h5>- Albert Einstein<h5> -->
 
 
 
