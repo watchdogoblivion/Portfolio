@@ -11,37 +11,45 @@
 					<p>Having coded in multiple languages, I have come to find that the success of a project is dependent on multiple
 					factors. To achieve our goals as efficiently as possible, it is important that we work on ourselves as a team and as individuals on a constant basis. It is true that we should always set end goals, but the ultimate end goal should in fact be a never ending one. The goal to be the best that we can be in every way by using every accomplishment as a stepping stone to reach even greater heights than anyone else, including ourselves.</p>
 
-					<p class="navbar-dark" > 
+               <p>
+					<span class="navbar-dark" > 
+						&nbsp;&nbsp;&nbsp; Job History &emsp;&nbsp;&nbsp; 
 					    <button  class="navbar-toggler button-icon" 
 					     type="button" 
 					     data-toggle="collapse" 
 					     data-target="#jobHistory" 
 					     aria-controls="jobHistory" 
-					     aria-expanded="false">
-					      <span class="navbar-toggler-icon toggler-button"></span>
-					    </button> &nbsp; Job History &emsp;&emsp; 
-
+					     aria-expanded="false"
+					     style=" margin-bottom: 5%">
+					      <span class="navbar-toggler-icon "></span>
+					    </button> 
+					</span>
+					&emsp;&emsp;
+					<span class="navbar-dark ">
+					     Education &emsp;
 					    <button  class="navbar-toggler button-icon" 
 					    type="button" 
 					    data-toggle="collapse" 
 					    data-target="#education" 
 					    aria-controls="education" 
-					    aria-expanded="false">
+					    aria-expanded="false"
+					    style="">
 					      <span class="navbar-toggler-icon toggler-button"></span>
-					    </button> &nbsp; Education 
-					</p>
+					    </button> 
+					</span>
+				</p>
 						
 
 					<p>
-						<div class = "collapse left-align" id="jobHistory">
-							<div class= "card card-block">
+						<div class = "collapse " id="jobHistory">
+							<div class= "custom-card " >
 								<div>
 									<mark>Company:</mark>Self employed<br> 
 									<mark>Job title:</mark> Freelance Personal Trainer<br> 
 									<mark>Job description:</mark>Assess and evaluate client needs to assist them in reaching their physical and health goals. Provided unique, dynamic, and individualized fitness training regimens. Demonstrate to and instruct clients on proper techniques to reduce likelyhood of injuries. 
 								</div>
 							</div>
-							<div class= "card card-block">
+							<div class= "custom-card">
 								<div>
 									<mark>Company:</mark>Massachusetts General Hospital <br>
 									<mark>Job title:</mark> Physical Therapy Aide <br> 
@@ -49,35 +57,35 @@
 									Acquired and delivered physical agents to help relieve pain and disability caused by disease or injury as directed by the physical therapist's plan of care. 
 								</div>
 							</div>
-							<div class= "card card-block">
+							<div class= "custom-card">
 								<div>
 									<mark>Company:</mark>Umass Boston Beacon Fitness Center <br>
 									<mark>Job title:</mark> Personal Trainer <br> 
 									<mark>Job description:</mark>Evaluated member needs and assisted them in achieving their personal fitness goals. Taught clients how to modify exercises appropriately to decrease probability of injury. Promoted fitness facility in order to recruit new members and increase sales. Maintained and organized all equipment in the recreation and fitness facility.
 								</div>
 							</div>
-							<div class= "card card-block">
+							<div class= "custom-card">
 								<div>
 									<mark>Company:</mark>Umass Boston Beacon Fitness Center <br>
 									<mark>Job title:</mark> Front Desk Receptionist <br> 
 									<mark>Job description:</mark>Organized and scheduled registrations and appointments for the fitness facilities athletic, health, and recreational programs. Monitored  incoming calls and answered queries from customers. Handles and maintained multiple cash transactions.
 								</div>
 							</div>
-							<div class= "card card-block">
+							<div class= "custom-card">
 								<div>
 									<mark>Company:</mark>Benjamin Healthcare Center<br>
 									<mark>Job title:</mark> Dietary Aid <br> 
 									<mark>Job description:</mark>Prepare and label food for the elderly with allergies and dietary or fluid restrictions; Organize daily eating schedule and seating for patients; implement hygiene standards and procedures. 
 								</div>
 							</div>
-							<div class= "card card-block">
+							<div class= "custom-card">
 								<div>
 									<mark>Company:</mark>UMass Boston Bookstore Follett<br>
 									<mark>Job title:</mark> Cashier/Sales Associate <br> 
 									<mark>Job description:</mark> Provided technical assistance to customers and supplied needed information on materials; Completed rental and purchased transactions; Acquired and supplied ordered materials. 
 								</div>
 							</div>
-							<div class= "card card-block">
+							<div class= "custom-card">
 								<div>
 									<mark>Company:</mark>Wakefield Estate<br>
 									<mark>Job title:</mark> Agricultural Attendant <br> 
@@ -87,21 +95,21 @@
 						</div>
 
 						<div class = "collapse left-align" id="education">
-							<div class= "card card-block">
+							<div class= "custom-card">
 								<div>
 									<mark>School:</mark> Western Governors University<br> 
 									<mark>Degree:</mark>B.S. in Software Devlopment<br>
 									<mark>Graduation Date:</mark> August 2018
 								</div>
 							</div>
-							<div class= "card card-block">
+							<div class= "custom-card">
 								<div>
 									<mark>School:</mark> University of Massachusetts Boston<br> 
 									<mark>Degree:</mark>B.S. in Exercise and Health Sciences<br>
 									<mark>Graduation Date:</mark> December 2016
 								</div>
 							</div>
-							<div class= "card card-block">
+							<div class= "custom-card">
 								<div>
 									<mark>School:</mark> Milton High School<br> 
 									<mark>Degree:</mark> High School Diploma<br>
@@ -115,24 +123,19 @@
 		</div>
 		<div class = "col-md-5">
 			<div class = "container">
-				<%= image_tag "profile.png", width: "82%", alt: "Portfolio image", class: "mc" %>
+				<%= image_tag "profile.png", width: "76%", alt: "Portfolio image", class: "" %>
 		    </div>
 		    <div class = "container">
-			    <div class="responsive">
-					<div>
+			        <span style="float: left">
 						<button class = "button text-sizing mt"><%= link_to "More About Me", more_about_me_path%></button>
-					</div>
-					<div>
-						<button class = "button text-sizing f-r mt"><%= link_to "Certifications+", certifications_path %></button>
-				    </div>
-			    </div>
+					</span>
+					
+					<span style="float: right">
+						<button class = "button text-sizing mt"><%= link_to "Certifications+", certifications_path %></button>
+				    </span>
 		    </div>
 		</div>
 	</div>
 </div>
-
-
-
-
 
 <%#= markdown string = "<mark>Company:</mark> Wakefield Estate Job title: Agricultural Attendant <br> Job description: Served many functions: as secretary to manager—categorized and organized documentations for trust fund; As caretaker, oversaw health of small animals such as chickens and turtles; As a gardener: mulched, pruned, and weeded gardening areas."%>

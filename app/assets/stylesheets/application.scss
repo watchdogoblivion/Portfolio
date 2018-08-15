@@ -203,7 +203,7 @@ h6, .h6 {
 
 .app-card-container .card{
   background-color: #034f84;
-  padding: 40px;
+  padding: 3%;
 }
 
 .text-sizing{
@@ -217,8 +217,8 @@ h6, .h6 {
 .home-card {
   background-color:rgba(0, 0, 0, 0.75);
   margin: auto;
-  width: 40%;
-  height: 80%
+  width: 80%;
+  height: 90%
 }
 
 .outer-card{
@@ -329,3 +329,16 @@ margin-top: 10px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 100%;
 }
+
+.custom-card{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #034f84;
+  border: 10px solid rgba(0, 0, 0, 0.125);
+  padding: .25rem;
+  text-align: left;
+  font-size: 15px;
+   width: 100%;
+  color: white;
+}
+

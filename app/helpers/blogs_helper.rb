@@ -43,9 +43,9 @@ module BlogsHelper
     	object.each_line do |s|
     		string << s
     		count = count + 1
-    		return string if count == lines
+    		return string << "......" if count == lines
     	end
-    	string
+    	string 
     end
 
     def icons_helper(object, css_class="")
