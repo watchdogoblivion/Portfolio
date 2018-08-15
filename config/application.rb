@@ -21,7 +21,7 @@ Bundler.require(*Rails.groups)
 module RubyProject1
   class Application < Rails::Application
 
-  	config.assets.initialize_on_precompile = false
+  	#config.assets.initialize_on_precompile = false
   
     config.load_defaults 5.2
 
