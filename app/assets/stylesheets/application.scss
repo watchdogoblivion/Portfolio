@@ -179,13 +179,9 @@ h6, .h6 {
   background-color: black;
 }
 
-.image {
-    transform: rotate(90deg);
-}
-
 .backdrop{
     border-style: solid;
-    border-width: 5px;
+    border-width: 1%;
     background-color: black;
 }
 
@@ -215,19 +211,34 @@ h6, .h6 {
 }
 
 .card-width {
-  width: 600px;
+  width: 100%
 }
 
 .home-card {
   background-color:rgba(0, 0, 0, 0.75);
-  margin-left: 175px;
-  width: 500px;
+  margin: auto;
+  width: 40%;
+  height: 80%
 }
 
+.outer-card{
+  width: 100%;
+  height: 450px;
+}
 .contact-card {
   background-color:rgba(0, 0, 0, 0.5);
-  width: 300px;
   height: 250px;
+  width: 70%;
+  margin: auto;
+  
+}
+
+.contact-card-height1 {
+  height: 450px;
+}
+
+.contact-card-height2 {
+  height: 450px;
 }
 
 .card-block {
@@ -257,12 +268,64 @@ mark {
   text-align: left;
 }
 
-.ghg{
-    background-color:rgba(0, 0, 0, 0.5);
-    height: 30px;
-    padding-top: 10px;
-    padding-right: 50px;
-    padding-bottom: 50px;
-    padding-left: 50px;
-    
+.nav-back{
+    background-color:rgba(0, 0, 0, 0.5);     
+}
+li{
+  margin-bottom: 10px;
+margin-top: 10px;
+}
+.nav-link{
+
+  margin-left: 33px;
+  margin-right: 10px;
+  padding-right: 0px;
+  padding-left: 0px;
+  display:inline;
+}
+
+ .nav .nav-link{
+   border-bottom: .35rem solid transparent;    
+}
+
+.nav .active {
+    border-bottom-color: white; 
+}
+
+.nav .nav-link:hover,
+.nav .nav-link:focus {
+  border-bottom-color: white; 
+}
+
+.navbar-brand {
+ margin-left: 0rem;
+ matgin-top: 40px;
+ }
+
+.nav {}
+.navbar-toggler{}
+
+.nav-margins{
+  margin-top: 2%;
+   margin-bottom: 2%;
+}
+
+.mt {
+  margin-top: 10%;
+}
+.mc{
+  margin-left: 10%;
+}
+.f-r{
+  float: right;
+}
+
+.f-l{
+  float: left;
+}
+
+.responsive {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;
 }

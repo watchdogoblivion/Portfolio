@@ -1,10 +1,23 @@
- <div class="container">
-    <div class="nav-scroller py-1 mb-2">
-        <nav class="nav d-flex justify-content-between ">
-            <%= nav_helper("nav-link") %>
-	        <%= login_helper("nav-link") %>
-        </nav>
-    </div>
-</div>   
-<!-- nav-background -->
+<header>
+	<nav class="navbar navbar-expand-md navbar-light">
+		<div class="collapse navbar-collapse " id="navbarTogglerDemo01">
+		    <ul class=" navbar-nav  nav">
+		          <%= nav_helper("nav-link") %>
+		          <li><%= login_helper("nav-link login-pads") %><li>
+		    </ul> 
+	    </div>
+		<div class="navbar-brand"></div>
+		<button class="navbar-toggler " 
+		      type="button" 
+		      data-toggle="collapse" 
+		      data-target="#navbarTogglerDemo01" 
+		      aria-controls="navbarTogglerDemo01" 
+		      aria-expanded="false" 
+		      aria-label="Toggle navigation">Explore
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	</nav>
+</header>
+
+
 

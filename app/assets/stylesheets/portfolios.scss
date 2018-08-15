@@ -95,5 +95,21 @@ portfolio-container{
 
 .container .skills{
   margin: auto;
-  width: 700px;
+  width: 70%;
 }
+
+/* not used */
+.container2 {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.skills2{
+   display: grid;
+    grid-template-columns: 100% 100% 100%;
+    grid-template-rows: 100% 100%;
+}
+

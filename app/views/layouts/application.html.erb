@@ -13,26 +13,18 @@
         <meta name="keywords" content="<%= @seo_keywords %>" />
 
         <%= favicon_link_tag 'favicons/favicon.ico' %>
-
+        
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     </head>
 
-    <body style= "background-color: black">
-        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-            
-
+    <body class = "container text-center" style= "margin: auto; background-color: black">
+        <div class="row">
             <%= render "shared/application_nav"%>
-
-            <!-- yield allows us to slide the content in to page -->
             <%= yield %> 
-
             <%= render "shared/application_footer"%>
-
             <%= alerts %>
             <%= alert_position %>
-
-
         </div>
     </body>
 </html>

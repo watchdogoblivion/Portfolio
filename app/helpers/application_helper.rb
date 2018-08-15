@@ -55,8 +55,8 @@ module ApplicationHelper
     	nav_links = ""
 
     	nav_items.each do | item |
-			nav_links << " <a href='#{item[:url]}' class='#{class_style} #{active? item[:url]}'
-			style='#{style}'>#{item[:title]}</a>"
+			nav_links << " <li><a href='#{item[:url]}' class='#{class_style} #{active? item[:url]}'
+			style='#{style}'>#{item[:title]}</a></li>"
 		end
 
   		nav_links.html_safe
@@ -74,13 +74,29 @@ module ApplicationHelper
 		end
 	end
 
+	def break_space (image = nil, counts = 0)
+		br = ""
+
+		unless image.nil?
+			image[:iterate].times do 	
+		  		br << "<br>"
+		    end 
+		else
+			counts.times do
+				br << "<br>"
+			end
+		end
+
+		 br.html_safe
+	end
+
 	def about_me_items
 		[
 			{
 				style1: "col-md-12",
 				iterate: 1,
 				image: "umb.jpg",
-				height: 600,
+				width: "100%",
 				style2: "",
 				alt: "Umb image"
 			},
@@ -88,7 +104,7 @@ module ApplicationHelper
 				style1: "col-md-12",
 				iterate: 1,
 				image: "acsm.jpg",
-				height: 600,
+				width: "100%",
 				style2: "",
 				alt: "Acsm image"
 			},
@@ -96,7 +112,7 @@ module ApplicationHelper
 				style1: "col-md-12",
 				iterate: 1,
 				image: "record.png",
-				height: 450,
+				width: "100%",
 				style2: "",
 				alt: "Record image"
 			},
@@ -104,23 +120,23 @@ module ApplicationHelper
 				style1: "col-md-6",
 				iterate: 1,
 				image: "posing2.jpg",
-				height: 400,
+				width: "100%",
 				style2: "",
 				alt: "Posing image"
 			},
 			{
-				style1: "col-md-6",
-				iterate: 3,
-				image: "awards.jpg",
-				height: 300,
-				style2: "image",
+				style1: "col-md-6 ",
+				iterate: 1,
+				image: "awards.png",
+				width: "100%",
+				style2: "",
 				alt: "Awards image"
 			},
 			{
 				style1: "col-md-6",
-				iterate: 2,
+				iterate: 1,
 				image: "lifting1.png",
-				height: 400,
+				width: "100%",
 				style2: "",
 				alt: "Lifting image"
 			}
@@ -133,7 +149,7 @@ module ApplicationHelper
 				style1: "col-md-12",
 				iterate: 2,
 				image: "wgu.jpg",
-				height: 550,
+				width: "100%",
 				style2: "",
 				alt: "Certification"
 			},
@@ -141,7 +157,7 @@ module ApplicationHelper
 				style1: "col-md-12",
 				iterate: 2,
 				image: "network.png",
-				height: 600,
+				width: "100%",
 				style2: "",
 				alt: "Certification"
 			},
@@ -149,7 +165,7 @@ module ApplicationHelper
 				style1: "col-md-12",
 				iterate: 2,
 				image: "a_plus.png",
-				height: 600,
+				width: "100%",
 				style2: "",
 				alt: "Certification"
 			},
@@ -157,7 +173,7 @@ module ApplicationHelper
 				style1: "col-md-12",
 				iterate: 2,
 				image: "project.png",
-				height: 600,
+				width: "100%",
 				style2: "",
 				alt: "Certification"
 			},
@@ -165,7 +181,7 @@ module ApplicationHelper
 				style1: "col-md-12",
 				iterate: 2,
 				image: "site.png",
-				height: 500,
+				width: "100%",
 				style2: "",
 				alt: "Certification"
 			},
@@ -173,7 +189,7 @@ module ApplicationHelper
 				style1: "col-md-12",
 				iterate: 2,
 				image: "designer.png",
-				height: 500,
+				width: "100%",
 				style2: "",
 				alt: "Certification"
 			},
@@ -181,7 +197,7 @@ module ApplicationHelper
 				style1: "col-md-12",
 				iterate: 2,
 				image: "specialist.png",
-				height: 570,
+				width: "100%",
 				style2: "",
 				alt: "Certification"
 			},
@@ -189,7 +205,7 @@ module ApplicationHelper
 				style1: "col-md-12",
 				iterate: 2,
 				image: "associate.png",
-				height: 600,
+				width: "100%",
 				style2: "",
 				alt: "Certification"
 			},
@@ -197,7 +213,7 @@ module ApplicationHelper
 				style1: "col-md-12",
 				iterate: 2,
 				image: "professional.png",
-				height: 600,
+				width: "100%",
 				style2: "",
 				alt: "Certification"
 			}

@@ -17,24 +17,30 @@
   </head>
 
   <body>
-    <main role="main" class="container">
-      <div class="row">
+   
         <%= render "shared/blog_nav"%>
         <%= render "shared/blog_head"%>
+        <div class="container">
+      <div class = " row ">
         <%= yield %> 
         <%= render "shared/blog_sidebar"%>
       </div>
+    </div>
+      
         <%= render "shared/blog_footer"%>
 
         <%= alerts %>
         <%= alert_position %>
         
-    </main> 
+   
   </body>
 </html> 
         
 
-            
+<!--  <main role="main" class="container">
+      <div class="row">  
+      </div>
+ </main> -->
 
 
 

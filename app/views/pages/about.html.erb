@@ -2,21 +2,6 @@
 <br>
 <div class = "container">
 	<div class = "row">
-		<div class = "col-md-5">
-			<br><br>
-			<%= image_tag "profile.png", height: 500, alt: "Portfolio image" %>
-			<div class = "row">
-			<div class = "col-md-6">
-					<br>
-					<button class = "button text-sizing"><%= link_to "More About Me", more_about_me_path%></button>
-				</div>
-				<div class = "col-md-6">
-					<br>
-					<button class = "button text-sizing"><%= link_to "Certifications+", certifications_path %></button>
-				</div>
-		    </div>
-		</div>
-
 		<div class="col-md-7" style="color: white;">
 			<div class = "app-card-container">
 				<div class = "card card-width">
@@ -127,6 +112,21 @@
 					</p>
 				</div>
 			</div>
+		</div>
+		<div class = "col-md-5">
+			<div class = "container">
+				<%= image_tag "profile.png", width: "82%", alt: "Portfolio image", class: "mc" %>
+		    </div>
+		    <div class = "container">
+			    <div class="responsive">
+					<div>
+						<button class = "button text-sizing mt"><%= link_to "More About Me", more_about_me_path%></button>
+					</div>
+					<div>
+						<button class = "button text-sizing f-r mt"><%= link_to "Certifications+", certifications_path %></button>
+				    </div>
+			    </div>
+		    </div>
 		</div>
 	</div>
 </div>

@@ -1,22 +1,39 @@
-<body class="text-center">
-    <div class="row ghg masthead mb-auto ">
-    	<div class= "col-md-4 ">
-	    	<% unless current_page? certifications_path%>
-	      		<h3 class="masthead-brand">Samuel Dorilas</h3>
-	      	<% else %>
-		        <h3 class="masthead-brand color-one" >Samuel Dorilas</h3>
-            <% end %>
-        </div>
-        <div class= "col-md-8">
-	        <nav class="nav nav-masthead justify-content-center">
-		      	<% unless current_page? certifications_path%>
-		      		<%= nav_helper("nav-link") %>
-		            <%= login_helper("nav-link") %>
-		      	<% else %>
-			        <%= nav_helper("nav-link", "color:black;") %>
-			        <%= login_helper("nav-link", "color:black;") %>
-		        <% end %>
-	        </nav>
-	    </div>
-    </div>
-</body>
+<div class= "col-md-12">
+  <div class="container">
+    <body class="text-center">
+      <div class=" navbar-expand-md navbar-dark nav-back nav-margins" style="">       
+        <div class = "row">
+          <div class = "col-md-4">
+            <% unless current_page? certifications_path%>
+                <div class="navbar-brand nav-margins" style="">Samuel Dorilas</div>  
+              <% else %>
+                <div class="navbar-brand nav-margins color-one" style="">Samuel Dorilas</div>
+              <% end %> 
+            <button class="navbar-toggler " 
+            type="button" 
+            data-toggle="collapse" 
+            data-target="#navbarHeader3" 
+            aria-controls="navbarHeader3" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation" style="">
+              <span class="navbar-toggler-icon "></span>
+            </button>
+          </div>  
+          <div class="col-md-8">   
+            <div class="collapse navbar-collapse nav-margins" id="navbarHeader3"  >     
+              <nav class="nav justify-content-center" >
+                <% unless current_page? certifications_path%>
+                  <%= nav_helper("nav-link") %>
+                  <li><%= login_helper("nav-link") %></li>
+                <% else %>
+                  <%= nav_helper("nav-link", "color:black;") %>
+                  <li><%= login_helper("nav-link", "color:black;") %></li>
+                <% end %>
+              </nav>          
+            </div>
+          </div>
+        </div>  
+      </div>
+    </body>
+  </div>
+</div>
