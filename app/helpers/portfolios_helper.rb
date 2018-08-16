@@ -14,5 +14,15 @@ module PortfoliosHelper
 			image_generator(height: "400", width: "400")
 		end
 	end
+
+	def place_images (portfolio_item)
+	    if portfolio_item.id == 1
+	    	image_tag "student_scheduler.png", width: "100%", alt: "Portfolio image"
+	    elsif portfolio_item.id == 2
+		    image_tag "sprint.png", width: "100%", alt: "Portfolio image"
+		else
+			image_tag portfolio_img(portfolio_item.main_image.url, "main"), width: '100%'
+	    end
+	end
 				
 end

@@ -1,7 +1,8 @@
 <% @portfolio_items.each do |portfolio_item| %>
 	<div class="col-md-4">
 		<div class="card mb-4 shadow-sm" data-id= "<%= portfolio_item.id %>">
-		<%= image_tag portfolio_img(portfolio_item.thumb_image.url, "thumb"), width: '100%'  %>
+			<!-- This method is to account for heroku ephemeral filesystem not storing images due to dynos resetting every 24 hours, the proper work around is using a cloud storage -->
+			<%= place_images (portfolio_item) %> 
 			<div class="card-body">
 				<p class="card-text">
 					<span><%=  portfolio_item.title %></span>

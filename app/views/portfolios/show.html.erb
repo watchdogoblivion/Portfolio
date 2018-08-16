@@ -1,7 +1,8 @@
 <div class = "container portfolio-container">
 	<div class = "row">
 		<div class= "col-md-8">
-			<%= image_tag portfolio_img(@portfolio_item.main_image.url, "main"), width: '100%'%>
+			<!-- This method is to account for heroku ephemeral filesystem not storing images due to dynos resetting every 24 hours, the proper work around is using a cloud storage -->
+			<%= place_images (@portfolio_item) %>
 		</div>
 		<div class= "col-md-4">
 			<h1> <%= @portfolio_item.title %> </h1>
