@@ -5,8 +5,16 @@
 		<div class="col-md-7" style="color: white;">
 			<div class = "app-card-container">
 				<div class = "card card-width">
+					<div class = "container">
+						<span style="float: left">
+							<button class = "button text-sizing mt"><%= link_to "More About Me", more_about_me_path%></button>
+						</span>
+						<span style="float: right">
+							<button class = "button text-sizing mt"><%= link_to "Certifications+", certifications_path %></button>
+					    </span>
+					</div>
 					<h1>About me</h1>
-					<p>I have been programming for a few years. I have a bachelors degree in Software developement. I have certifications through Comptia, Oracle, and CIW. My highest certification is the Oracle certified Java professional programmer. I have written projects in Java, javascript, ruby, python, and C#. I have also created android applications in java. I have utilized html, css, and xml on a constant. My language of preference is java, since I have had the most experience with it, however I am very happy to work with any language. Even through all my experience I am still learning I hope to be the best programmer that I can be.</p>
+					<p>I have been programming for a few years. I have a bachelors degree in Software developement. I have certifications through Comptia, Oracle, and CIW. My highest certification is the Oracle certified Java professional programmer. I have written projects in Java, Javascript, Ruby, Python, and C#. I have also created android applications in Java. I have utilized HTML, CSS, and XML on a constant. My language of preference is Java, since I have had the most experience with it, however I am very happy to work with any language. Even through all my experience I am still learning I hope to be the best programmer that I can be.</p>
 					<br>
 					<p>Having coded in multiple languages, I have come to find that the success of a project is dependent on multiple
 					factors. To achieve our goals as efficiently as possible, it is important that we work on ourselves as a team and as individuals on a constant basis. It is true that we should always set end goals, but the ultimate end goal should in fact be a never ending one. The goal to be the best that we can be in every way by using every accomplishment as a stepping stone to reach even greater heights than anyone else, including ourselves.</p>
@@ -85,13 +93,6 @@
 									<mark>Job description:</mark> Provided technical assistance to customers and supplied needed information on materials; Completed rental and purchased transactions; Acquired and supplied ordered materials. 
 								</div>
 							</div>
-							<div class= "custom-card">
-								<div>
-									<mark>Company:</mark>Wakefield Estate<br>
-									<mark>Job title:</mark> Agricultural Attendant <br> 
-									<mark>Job description:</mark> Served many functions: as secretary to manager—categorized and organized documentations for trust fund; As caretaker, oversaw health of small animals such as chickens and turtles; As a gardener: mulched, pruned, and weeded gardening areas.
-								</div>
-							</div>
 						</div>
 
 						<div class = "collapse left-align" id="education">
@@ -123,16 +124,7 @@
 		</div>
 		<div class = "col-md-5">
 			<div class = "container">
-				<%= image_tag "profile.png", width: "76%", alt: "Portfolio image", class: "" %>
-		    </div>
-		    <div class = "container">
-			        <span style="float: left">
-						<button class = "button text-sizing mt"><%= link_to "More About Me", more_about_me_path%></button>
-					</span>
-					
-					<span style="float: right">
-						<button class = "button text-sizing mt"><%= link_to "Certifications+", certifications_path %></button>
-				    </span>
+				<%= image_tag "profile.png", width: "85%", alt: "Portfolio image", class: "" %>
 		    </div>
 		</div>
 	</div>
