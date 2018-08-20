@@ -5,7 +5,7 @@ class Topic < ApplicationRecord
 	 has_many :blogs
 
 	 def self.with_blogs
-	 	includes(:blogs).where.not(blogs: {id:nil})
+	 	includes(:blogs).where.not(blogs: {status: :draft})
 	 end
 
 	def self.recent
