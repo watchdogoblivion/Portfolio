@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "font-awesome";
 @import "jquery-ui";
 @import "gritter";
 
@@ -111,5 +112,9 @@ portfolio-container{
    display: grid;
     grid-template-columns: 100% 100% 100%;
     grid-template-rows: 100% 100%;
+}
+
+.social-links{
+  font-size: 30px;
 }
 
