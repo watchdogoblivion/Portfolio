@@ -1,5 +1,6 @@
 <div class = "container">
 	<div class="skills">
+		<h1 >Exposure</h1>
 		<% Skill.all.order("percent_utilized DESC").each do |skill| %>
 			<div class="skill">
 			    <h4><%= skill.title %></h4>
