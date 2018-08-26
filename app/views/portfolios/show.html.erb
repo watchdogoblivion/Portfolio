@@ -14,12 +14,10 @@
 			<% @portfolio_item.technologies.each do |t| %>
 				<p> <%= t.name %> </p>
 			<% end %>
-			<% if logged_in?(:site_admin) %>
-			    <p>
-					<%= link_to "Edit Item", edit_portfolio_path(@portfolio_item), class: "btn btn-warning" %>
-					<%= link_to "Delete", @portfolio_item, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
-			    </p>
-			<% end %>
+			<p>
+				<%= admin_buttons(@portfolio_item, "show") %>
+				<%= user_buttons(@portfolio_item, "show") %>
+			</p>
 		</div>
 	</div>
 </div>
