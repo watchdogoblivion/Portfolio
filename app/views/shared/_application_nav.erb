@@ -4,10 +4,17 @@
       <div class=" navbar-expand-md navbar-dark nav-back nav-margins" style="">       
         <div class = "row">
           <div class = "col-md-4">
+            <%= image_tag "ruby.png", width: "10%", alt: "Ruby image", class: "" %>
+            &emsp;
             <% unless current_page? certifications_path%>
-                <div class="navbar-brand nav-margins" style="">Samuel Dorilas</div>  
+                <div class="navbar-brand nav-margins" style="">
+                Samuel Dorilas
+                 
+              </div>  
               <% else %>
-                <div class="navbar-brand nav-margins color-one" style="">Samuel Dorilas</div>
+                <div class="navbar-brand nav-margins color-one" style="">
+                  Samuel Dorilas
+                </div>
               <% end %> 
             <button class="navbar-toggler " 
             type="button" 
@@ -22,6 +29,7 @@
           <div class="col-md-8">   
             <div class="collapse navbar-collapse nav-margins" id="navbarHeader3"  >     
               <nav class="nav justify-content-center" >
+                
                 <% unless current_page? certifications_path%>
                   <%= nav_helper("nav-link") %>
                   <li><%= login_helper("nav-link") %></li>

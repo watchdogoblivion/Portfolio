@@ -22,6 +22,8 @@ module PortfoliosHelper
 		    image_tag "sprint.png", width: "100%", alt: "Portfolio image"
 		elsif portfolio_item.id == 7
 			image_tag "f2f.png", width: "100%", alt: "Portfolio image"
+		elsif portfolio_item.id == 8
+			image_tag "estate.png", width: "100%", alt: "Portfolio image"
 		else
 			image_tag portfolio_img(portfolio_item.main_image.url, "main"), width: '100%'
 	    end
@@ -35,6 +37,8 @@ module PortfoliosHelper
 			return "color: green; #{weight}"
 		elsif subtitle == "Ruby"
 			return "color: red; #{weight}"
+		elsif subtitle == "Python"
+			return "color: blue; #{weight}"
 		else
 			return "color: #CCCC00; #{weight}"
 		end

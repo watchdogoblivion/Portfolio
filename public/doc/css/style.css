@@ -135,6 +135,8 @@ body {
   font-size: 1.2rem;
   margin-top: auto; }
 
+
+
 .link:link,
 .link:visited {
   color: #968B87; }
@@ -161,7 +163,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between; }
-  .header__logo {
+.header__logo {
     margin-left: 4rem;
     height: 4.5rem;
     display: block; }
@@ -491,3 +493,4 @@ body {
   .shopping__item:hover .shopping__delete {
     opacity: 1;
     visibility: visible; }
+
