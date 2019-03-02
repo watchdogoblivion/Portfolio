@@ -6,6 +6,6 @@ test:
 
 production:
   adapter: redis
-  url: redis://rediscloud:geImBAeIn5dQkyORwuK90j033AzunVp3@redis-11432.c8.us-east-1-4.ec2.cloud.redislabs.com:11432
+  url: redis://redistogo:908c5d95f5c685d16478a3417f2f1dd3@tarpon.redistogo.com:10135/
   channel_prefix: RubyProject1_production
   # url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
