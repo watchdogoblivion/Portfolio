@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
 
+  require 'resolv-replace'
+
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status, :toggle_featured]
   before_action :set_featured, only:[:index, :update, :published_blogs, :drafted_blogs, :toggle_featured]
   before_action :set_sidebar_topics, except: [ :toggle_status, :destroy]
